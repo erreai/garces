@@ -566,7 +566,6 @@ a:focus, button:focus { outline: none!important}
 #noticias .mod_noticia .int span {padding: 5px 35px 0 0; display: inline;background: url(../images/bullet.svg) right bottom no-repeat;background-size: 19px;}
 #noticias .mod_noticia .int h3 {@include hindBold(24px); display: inline; margin: 0; padding: 0; color: #1a3204; line-height: 24px}
 #noticias .mod_noticia .int p {}
-#noticias .mod_noticia .int a {font-weight: 700; font-style: italic; color: #9e9475;}
 
 
 #noticias a.cargar {border: solid 1px #867f68; color: #867f68; padding: 17px 20px 14px; display: block !important; height: initial !important; @include hindBold(20px); width: 100%; max-width:240px; margin:0 auto; text-align:center}
@@ -575,7 +574,6 @@ a:focus, button:focus { outline: none!important}
 
 #detalle_noticia { margin: 0}
 #detalle_noticia .bajada { text-align: center; padding: 0 0 40px}
-#detalle_noticia p { padding: 0 0 20px}
 #detalle_noticia p.img { margin: 0 0 20px 20px; text-align: center; font-size: 16px;}
 #detalle_noticia p.img img {display: block}
 .tit_otras { padding: 40px 0 20px 15px}
@@ -1442,5 +1440,25 @@ body,
   .logos{
     align-self: flex-end;
     margin-top: 3px;
+  }
+}.related-item{
+  &__title{
+    @include triangle(19px, 0px);
+  }
+  &__text{
+    color: #333;
+    @include lato(18px);
+    margin-bottom: 15px;
+    margin-top: 19px;
+    padding: 0;
+  }
+  &__readMore{
+    color: #9e9475;
+    @include latoBold(18px);
+    font-style: italic;
+    &:hover{
+      color: inherit;
+      text-decoration: underline;
+    }
   }
 }
