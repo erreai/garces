@@ -396,6 +396,7 @@ a:focus, button:focus { outline: none!important}
     h2 { 
       @include hindBold(52px);
       margin: 0;
+      text-shadow: 0px 0px 10px #000;
     }
   }
 }
@@ -1220,9 +1221,10 @@ body,
       height: 50%;
       max-width: 405px;
       max-height: 360px;
+      opacity: .5;
+      pointer-events: none;
       position: absolute;
       width: 50%;
-      opacity: .5;
     }
   }
   &-title{
@@ -1531,10 +1533,6 @@ body,
   }
 }
 .cta{
-  &--history{
-    padding: 160px 0 100px;
-    text-align: center;
-  }
   &__subtitle{
     color: #fff;
     @include hind(18px);
@@ -1569,6 +1567,18 @@ body,
     &:hover{
       color: #fff;
       background-color: rgba(0, 0, 0, 0.8);
+    }
+  }
+
+  &--history{
+    padding: 160px 0 100px;
+    text-align: center;
+  }
+  &--ofices{
+    padding: 160px 0 100px;
+    text-align: center;
+    .cta__text{
+      max-width: 675px
     }
   }
 }
