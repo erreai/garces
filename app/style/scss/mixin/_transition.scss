@@ -4,3 +4,64 @@
   -moz-transition: all $time $move;
   -webkit-transition: all $time $move;
 }
+@mixin sectionSeparator($bottom: 55px){
+  &:after{
+    content: '';
+    background-color: #9e9475;
+    bottom: $bottom;
+    height: 82px;
+    position: absolute;
+    width: 1px;
+  }
+}
+
+@mixin diagonalShadow(){
+  background-image: linear-gradient(64deg, rgba(8,8,7,0.5) 0%, rgba(8,8,7,0.5) 41%, rgba(8,8,7,0) 42%, rgba(8,8,7,0) 100%);
+  opacity: 1;
+}
+
+@mixin scrollFigure($top: top){
+  background-image: url('../images/scroll.png');
+  background-repeat: no-repeat;
+  background-position: center $top;
+}
+@mixin dividerCenter($size: 50px, $top: false, $bottom: false){
+  position: relative;
+  
+  @if $top == true {
+    &:before{
+      background-color: #9e9475;
+      top: -($size / 2);
+      content: '';
+      display: block;
+      height: $size;
+      left: calc(50% - 1px);
+      position: absolute;
+      width: 1px;
+    }
+  }
+  @else if $bottom == true {
+    &:after{
+      background-color: #9e9475;
+      bottom: -($size / 2);
+      content: '';
+      display: block;
+      height: $size;
+      left: calc(50% - 1px);
+      position: absolute;
+      width: 1px;
+    }
+  }
+  @else {
+    &:after{
+      background-color: #9e9475;
+      bottom: 0;
+      content: '';
+      display: block;
+      height: $size;
+      left: calc(50% - 1px);
+      position: absolute;
+      width: 1px;
+    }
+  }
+}

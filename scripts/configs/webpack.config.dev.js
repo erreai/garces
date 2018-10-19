@@ -17,6 +17,10 @@ module.exports = {
   },
   resolve: {
     modules: ['node_modules', 'app'],
-    extensions: ['.js', '.json']
+    extensions: ['.js', '.json'],
+    alias: {
+      jquery: 'script/vendors/jquery',
+      $: 'script/vendors/jquery'
+    }
   }
 }

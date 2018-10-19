@@ -1,20 +1,21 @@
 
 # Front End Boilerplate
-Front-end boilerplate for creating new web projects with Gulp.js and everything you need to get started.
+Front-end prototype for Garces Fruit.
+
 
 # Getting Started
 Required! Gulp installed `npm install -g gulp`
 
 ```
-$ cd html-boilerplate
+$ cd garces
 $ npm install
-$ npm run dev  
+$ npm run dev || yarn dev 
 ```
 
 # Build to production
 
 ```
-$ npm run build
+$ npm run build || yarn build
 ```
-
-Thank you for your suggestions!
+# Disclaimer
+I have NOT developed this site. I'm just working on fixes.

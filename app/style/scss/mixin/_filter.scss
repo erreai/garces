@@ -5,3 +5,63 @@
   -ms-filter: blur($pixel);
   filter: blur($pixel);
 }
+
+
+/*breakpoints*/
+
+$breakpoints: (
+  'mobile-s': '(min-width: 320px) and ( max-width: 375px )',
+  'minMobileSmall': '( min-width: 320px )',
+  'maxMobileSmall': '( max-width: 375px )',
+  'minMobile': 'screen and ( min-width: 321px)',
+  'mobile': 'screen and ( max-width: 425px)',
+  'mobile500': 'screen and ( max-width: 500px)',
+  'mobile600': 'screen and ( max-width: 600px)',
+  'maxMobile': 'screen and ( max-width: 767px)',
+  'minFablet': 'screen and ( min-width: 426px)',
+  'fablet': 'screen and ( max-width: 768px)',
+  'maxFablet': 'screen and ( max-width: 768px)',
+  'minTablet': 'screen and ( min-width: 769px)',
+  'tablet': 'screen and ( max-width: 992px)',
+  'maxTablet': 'screen and ( max-width: 992px)',
+  'minLaptop': '( min-width: 993px)',
+  'laptop': '( min-width: 993px) and ( max-width: 1199px)',
+  'maxLaptop': '( max-width: 1199px )',
+  'minDesktop': '( min-width: 1200px )',
+  'desktop': '(min-width: 1200px) and ( max-width: 1499px )',
+  'maxDesktop': '( max-width: 1499px )',
+  'desktop-height': '( max-height: 870px )',
+  'hd': '( min-width: 1500px) and ( max-width: 2199px )',
+  'minHd': '( min-width: 1500px)',
+  'retina': '(-webkit-min-device-pixel-ratio: 2) and  (min-resolution: 192dpi)',
+);
+
+@mixin respond-to($name, $push: false) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $name) {
+    // Prints a media query based on the value
+    @media #{map-get($breakpoints, $name)} {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  // But $push is defined
+  @else if $push != false {
+    // Add the new breakpoint to the map
+    $breakpoints: map-merge($breakpoints, ($name: $push)) !global;
+    // And re-call the mixin normally
+    @include respond-to($name) {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  // And there is no push
+  @else {
+    // Just warn the user
+    @warn "Unfortunately, no value could be retrieved from `#{$name}`. "
+        + "Please make sure it is defined in `$breakpoints` map. "
+        + "Or pass the media query as a second parameter to add it to the map.";
+  }
+}
