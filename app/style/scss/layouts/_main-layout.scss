@@ -400,15 +400,18 @@ a:focus, button:focus { outline: none!important}
   }
 }
 #miga {  
-  padding: 30px; 
   color: #4c4c4c;
-  @include lato(18px);
+  @include lato(17px);
+  font-style: italic;
+  padding: 30px; 
   a { 
     color: #4c4c4c;
+    &:hover{
+      text-decoration: underline;
+    }
   }
   span {
     color: #9e9475;
-    font-style: italic;
   }
 }
 
@@ -587,12 +590,11 @@ a:focus, button:focus { outline: none!important}
 
 #detalle_noticia .galeria .video { width: 100%; max-width: 780px; margin: 0 auto}
 
-#modal_galeria .modal-content { padding: 50px}
 #modal_galeria .modal-content h4 {@include hind(32px); color:#1a3204;}
 #modal_galeria .modal-header .close:hover { opacity: 1}
 #modal_galeria .owl-theme .owl-nav [class*='owl-'] { position: absolute; top: 50%;}
-#modal_galeria .owl-theme .owl-nav .owl-prev { left: -40px;}
-#modal_galeria .owl-theme .owl-nav .owl-next { right: -40px;}
+#modal_galeria .owl-theme .owl-nav .owl-prev { left: -50px;}
+#modal_galeria .owl-theme .owl-nav .owl-next { right: -50px;}
 
 
 .mod_cuadro { margin:0 0 200px}
@@ -1392,5 +1394,53 @@ body,
   @include dividerCenter(100px, false, true);
   &:after{
     z-index: 2;
+  }
+}
+
+.related_news{
+  color: #1a3204;
+  @include triangle(27px, 13px);
+  @include hindBold(42px);
+  margin: 0;
+  padding: 110px 15px 42px;
+}
+.modal.fade{
+  background-color: rgba(0,0,0,0.85);
+  .close{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    opacity: 1;
+  }
+  .owl-prev,.owl-next{
+    height: 30px;
+    width: 16px;
+    &:hover{
+      background: transparent;
+    }
+    i{
+      display: block;
+      width: 18px;
+      height: 2px;
+      background-color: #1a3204;
+      &:nth-child(1){
+        transform: rotate(45deg) translate(-7px, -8px);
+      }
+      &:nth-child(2){
+        transform: rotate(-45deg);
+      }
+    }
+  }
+  .owl-prev{
+    transform: rotate(180deg) translateY(11px);
+  }
+  .modal-content{
+    display: flex;
+    flex-direction: column;
+    padding: 50px 70px 30px;
+  }
+  .logos{
+    align-self: flex-end;
+    margin-top: 3px;
   }
 }

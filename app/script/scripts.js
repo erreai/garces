@@ -14,10 +14,10 @@ $(document).ready(function() {
   $('#carousel-lbx').owlCarousel({
     items: 1,
     lazyLoad: true,
-    navText: ["<img src='images/ico_prev.png'>", "<img src='images/ico_next.png'>"],
+    navText: ['<i></i><i></i>', '<i></i><i></i>'],
     loop: true,
     nav: true,
-    dots: true,
+    dots: false,
     margin: 10,
     pullDrag: false
   })
