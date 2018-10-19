@@ -1,8 +1,6 @@
 $(document).ready(function() {
   $('.close-dimmer').click(function() {
     $(this).closest('body').addClass('dimmer-open')
-    const menu = document.querySelectorAll('.float-menu')[0]
-    menu.style.height = `${$(document).innerHeight()}px`
   })
 
   $('.close-menu').click(function() {
@@ -20,16 +18,19 @@ $(document).ready(function() {
     loop: true,
     nav: true,
     dots: true,
-    margin: 10
+    margin: 10,
+    pullDrag: false
   })
 
-  $('#carousel-ppal').owlCarousel({
+  $('#carousel__home').owlCarousel({
     items: 1,
     loop: true,
     nav: false,
     navText: false,
     dots: true,
-    margin: 10
+    margin: 10,
+    pullDrag: false,
+    dotsContainer: '.owl-dots'
   })
 
   $('.datepicker').datepicker({

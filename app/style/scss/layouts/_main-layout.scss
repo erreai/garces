@@ -32,7 +32,7 @@ a:focus, button:focus { outline: none!important}
       &>li {
         border-bottom: 1px solid rgba(255,255,255,0.16);
         list-style-type: none;
-        padding: 25px 0 25px 0px;
+        padding: 15px 0 15px 0px;
         position: relative;
         text-indent: 120px;
         &:last-child {
@@ -46,7 +46,7 @@ a:focus, button:focus { outline: none!important}
             @include hind(36px);
             position: absolute;
             right: 110px;
-            top: 35px;
+            top: 17px;
           }
           &.collapsed{
             &:after{
@@ -58,7 +58,7 @@ a:focus, button:focus { outline: none!important}
           transition: width .3s;
           display: inline; 
           line-height: 150%;
-          @include latoThin(34px);
+          @include latoThin(24px);
           &:after {
             content: '';
             display: block;
@@ -93,7 +93,7 @@ a:focus, button:focus { outline: none!important}
     }
     &:after{
       content: 'Menu';
-      font-size: 12px;
+      font-size: 11px;
       text-transform: uppercase;
     }
     .menu{
@@ -152,20 +152,21 @@ a:focus, button:focus { outline: none!important}
   }
   .dimmer{
     height: 35px;
-    width: 20px;
+    width: 55px;
   }
 }
 .dimmer-open{
+  overflow: hidden;
   .dimmer{
     margin-top: 1px
   }
   .close-menu{
+    align-self: flex-end;
     background: transparent;
     border: none;
     cursor: pointer;
-    position: absolute;
+    position: relative;
     right: 40px;
-    top: 55px;
     transform: translateY(0);
     z-index: 10;
     &:after{
@@ -205,8 +206,10 @@ a:focus, button:focus { outline: none!important}
       opacity: 1;
       transition: opacity 0.25s ease;
       animation: menu-active-slide 0.25s;
-      height: 100%;
-      display: block
+      height: 100vh;
+      display: flex;
+      overflow: overlay;
+      flex-direction: column;
     }
   }
 }
@@ -699,13 +702,28 @@ a.ir_portal {color: #ffffff; border: solid 1px #ffffff;@include hindBold(20px); 
   align-items: center;
   position: absolute;
   top: 100px;
-  right: 157px;
+  right: 32px;
   height: calc(100% - 40px);
   .owl-dot:nth-child(1) {
     margin-top: -150px;
   }
 }
-#carousel-ppal .owl-dots .owl-dot { display: block}
+#carousel-ppal .owl-dots .owl-dot { 
+  background-color: #fff;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  display: block;
+  height: 9px;
+  margin-bottom: 10px;
+  padding: 0;
+  width: 9px;
+  &.active{
+    background-color: #9e9475;
+    border-color: #9e9475;
+    height: 11px;
+    width: 11px;
+  }
+}
 
 
 
@@ -1306,7 +1324,7 @@ body,
 }
 .separate-top-250{
   @include respond-to(minTablet){
-    padding-top: 130px;
+    padding-top: 40px;
   }
 }
 .separate-top-100{
@@ -1320,20 +1338,34 @@ body,
     &--main{
       &:after{
         opacity: 0;
+        transition: all .3s ease-out;
+        content: '';
       }
       &:hover{
         display: block;
         height: fit-content;
         position: relative;
         &:after{
-          @include diagonalShadow();
-          content: '';
           display: block;
           height: 100%;
           left: 0;
           position: absolute;
           top: 0;
           width: 100%;
+        }
+      }
+      &.from-left{
+        &:hover{
+          &:after{
+            @include diagonalShadow();
+          }
+        }
+      }
+      &.from-right{
+        &:hover{
+          &:after{
+            @include diagonalShadow(right);
+          }
         }
       }
     }
@@ -1345,4 +1377,20 @@ body,
 }
 .withScroller{
   @include scrollFigure(-42px);
+}
+.owl-buttons__container{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+}
+.carousel-home__wrapper{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  @include dividerCenter(100px, false, true);
+  &:after{
+    z-index: 2;
+  }
 }
