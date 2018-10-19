@@ -491,32 +491,7 @@ a:focus, button:focus { outline: none!important}
   }
 }
 
-#campos {
-  padding: 0 0 100px 0;
-  @include scrollFigure(-42px);
-  .tit { 
-    text-align: center; 
-    padding: 40px 0 25px; 
-    background: url('../images/linea.jpg') center bottom no-repeat; 
-    margin: 0 0 90px;
-    h2 {
-      @include hindBold(52px);
-      display: inline-block; 
-      margin: 0; 
-      padding: 0;
-    }
-    h4{
-      @include hind(20px);
-      margin: 0;
-    }
-    span {
-      padding: 0 46px 0 0;
-      display: inline-block;
-      background: url('../images/bullet.svg') right 2px no-repeat;
-      background-size: 36px;
-    }
-  }
-}
+
 #oficinas_banner {
   @include dividerCenter(100px, false, true);
   @include dividerCenter(100px, true);
@@ -618,14 +593,6 @@ a:focus, button:focus { outline: none!important}
 .mod_planta .recuadro .txt { float: left; width: 75%; margin: 0 0 40px; font-size: 18px;}
 .mod_planta .recuadro .boton { float: left; width: 25%; text-align: center; margin: 0 0 40px; padding: 16px 0 0 0}
 .mod_planta .recuadro .boton a {color: #867f68; border: solid 1px #867f68; padding: 17px 20px 14px; display: inline-block !important; width: initial !important; height: initial !important; font-weight: 700;}
-
-
-#conoce_historia { text-align: center; padding: 160px 0}
-#conoce_historia h4 { font-size: 18px; font-weight: 400; color: #fff;}
-#conoce_historia h2 { font-size: 52px; font-weight: 400; color: #fff;}
-#conoce_historia p { font-size: 18px; color: #fff; width: 100%; max-width: 680px; margin: 0 auto;}
-#conoce_historia a { border: solid 2px #fff; color: #fff; padding: 17px 20px 14px; display: inline-block !important; width: initial !important; font-size: 18px;}
-
 
 #conoce_historia.trabaja { margin: 0 0 140px}
 #conoce_historia.trabaja .cuadro { position: absolute; background: #e9e8e8; width: 370px; padding: 60px 30px; text-align: center; bottom: -80px}
@@ -772,7 +739,7 @@ a.ir_portal {color: #ffffff; border: solid 1px #ffffff;@include hindBold(20px); 
 #trabaja_nosotros .formulario .error_envio { background:url(../images/ico_error_envio.png) center top no-repeat; padding: 90px 0 0 0; margin:100px 0}
 #trabaja_nosotros .formulario .error_envio a {background:none; border:solid 1px #867f68; border-radius:0px; color: #867f68; font-size: 18px; display: block; max-width: 150px; margin: 10px auto; width: 100%; padding:12px 0 8px}
 
-#mods_certi .mod_certi {
+.mod_certi {
   .txt { 
     float: left; 
     position: relative;
@@ -1140,6 +1107,7 @@ body,
   }
 }
 .section{
+  position: relative;
   &#quienes {
     @include scrollFigure();
     padding: 170px 0;
@@ -1244,6 +1212,47 @@ body,
       }
     }
   }
+  &--withShadow{
+    &:before{
+      background-image: linear-gradient(138deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.1) 42%, rgba(0,0,0,0) 42%, rgba(0,0,0,0) 100%);
+      content: '';
+      display: block;
+      height: 50%;
+      max-width: 405px;
+      max-height: 360px;
+      position: absolute;
+      width: 50%;
+      opacity: .5;
+    }
+  }
+  &-title{
+    background: url('../images/linea.jpg') center bottom no-repeat;
+    padding: 67px 0 19px;
+    text-align: center; 
+    &__title{
+      color: #202918;
+      display: inline-block; 
+      @include hindBold(52px);
+      @include triangle(36px, 11px);
+      margin: 0; 
+      margin-right: -36px;
+      padding: 0;
+      text-transform: uppercase;
+    }
+    &__subtitle{
+      @include hindMedium(20px);
+      margin: 0;
+      text-transform: uppercase;
+    }
+  }
+}
+#campos {
+  padding: 0 0 100px 0;
+  @include scrollFigure(-42px);
+  .tit { 
+    padding: 40px 0 25px; 
+    margin: 0 0 90px;
+  }
 }
 .carousel{
   &__item{
@@ -1331,6 +1340,29 @@ body,
   margin-top: 50px;
   @include respond-to(minTablet){
     margin-top: 100px;
+  }
+}
+.separate-top-30{
+  margin-top: 15px;
+  @include respond-to(minTablet){
+    margin-top: 30px;
+  }
+}
+.separate-bottom-30{
+  margin-bottom: 15px;
+  @include respond-to(minTablet){
+    margin-bottom: 30px;
+  }
+}
+.divider{
+  display: flex;
+  justify-content: center;
+  &:after{
+    background: #9e9475;
+    content: '';
+    display: block;
+    height: 83px;
+    width: 1px;
   }
 }
 .image{
@@ -1441,7 +1473,8 @@ body,
     align-self: flex-end;
     margin-top: 3px;
   }
-}.related-item{
+}
+.related-item{
   &__title{
     @include triangle(19px, 0px);
   }
@@ -1459,6 +1492,83 @@ body,
     &:hover{
       color: inherit;
       text-decoration: underline;
+    }
+  }
+}
+.certificates{
+  .certificate{
+    align-items: center;
+    display: flex;
+    margin-bottom: 40px;
+    &__body{
+      margin-left: 18px;
+    }
+    &__image{
+      img{
+        display: block;
+        height: 100%;
+        width: auto;
+      }
+    }
+    &__title{
+      color: #202918;
+      @include hindBold(28px);
+      @include triangle(23px,8px);
+      text-transform: uppercase;
+    }
+    &__text{
+      color: #4c4c4c;
+      @include lato(18px);
+    }
+    &:nth-child(even){
+      flex-direction: row-reverse;
+      text-align: right;
+      .certificate__body{
+        margin-left: 0;
+        margin-right: 18px;
+      }
+    }
+  }
+}
+.cta{
+  &--history{
+    padding: 160px 0 100px;
+    text-align: center;
+  }
+  &__subtitle{
+    color: #fff;
+    @include hind(18px);
+    margin: 0;
+    text-transform: uppercase;
+  }
+  &__title{
+    color: #fff;
+    @include hindBold(52px);
+    margin: 0;
+    text-transform: uppercase;
+  }
+  &__text{
+    color: #fff;
+    @include lato(18px);
+    margin: auto;
+    max-width: 575px;
+    strong{
+      @include latoBold();
+    }
+  }
+  &__button{
+    background-color: rgba(0, 0, 0, 0.48);
+    border: 2px solid #fff;
+    color: #fff;
+    @include hindBold(20px);
+    margin-top: 30px;
+    padding: 15px 19px;
+
+    display: inline-block !important;
+    width: initial !important;
+    &:hover{
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.8);
     }
   }
 }
