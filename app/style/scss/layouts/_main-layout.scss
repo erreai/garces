@@ -145,6 +145,16 @@ a:focus, button:focus { outline: none!important}
             color: #fff;
             font-family: 'Lato';
             padding: 0 10px;
+            &:hover, &.active{
+              text-decoration: underline;
+            }
+          }
+          &:last-child{
+            a{
+              &:hover, &.active{
+              text-decoration: none;
+              }
+            }
           }
         }
       }
@@ -415,41 +425,6 @@ a:focus, button:focus { outline: none!important}
     color: #9e9475;
   }
 }
-
-#contacto {
-  @include scrollFigure(-42px);
-}
-#contacto .container { position: relative; height: 100%;}
-#contacto .formulario { margin: 100px 0; padding: 50px;  background: #f0f0f0; font-size: 18px;}
-#contacto .mod { background: url(../images/linea_media.jpg) center top repeat-y; margin: 20px 0}
-
-#contacto .formulario form {}
-#contacto .formulario form label { padding: 0;}
-#contacto .formulario form .form-control { border-radius: 0px; background: #e4e2de; border:solid 1px #9e9475;}
-
-.form-horizontal .control-label { text-align: left;}
-#contacto .formulario .bull { color:#9e9475; display: inline-block;}
-#contacto .form-group { margin: 0 -15px 45px}
-#contacto .peque { font-size: 12px;}
-#contacto .btn { background:none; border:solid 1px #867f68; border-radius:0px; color: #867f68; font-size: 18px;}
-#contacto h4 {@include hindBold(24px);}
-#contacto h4 span { display:inline-block; background: url(../images/efecto_h4.png) right center no-repeat; padding: 3px 30px 0 0}
-#contacto p strong { font-weight: 700;}
-#contacto .oficinas p { background: url(../images/ico_bull.png) left 7px no-repeat; padding: 0 0 0 15px;}
-
-
-
-#contacto .formulario form .form-control.error{border:solid 2px #1f3608;}
-#contacto .formulario form .form-control.error::placeholder { color:#1f3608 }
-#contacto .formulario form .form-control.error:-ms-input-placeholder { color:#1f3608 }
-#contacto .formulario form .form-control.error::-ms-input-placeholder { color:#1f3608 }
-
-#contacto .formulario .exito { background:url(../images/ico_exito.png) center top no-repeat; padding: 90px 0 0 0; margin:100px 0}
-#contacto .formulario .error_envio { background:url(../images/ico_error_envio.png) center top no-repeat; padding: 90px 0 0 0; margin:100px 0}
-#contacto .formulario .error_envio a {background:none; border:solid 1px #867f68; border-radius:0px; color: #867f68; font-size: 18px; display: block; max-width: 150px; margin: 10px auto; width: 100%; padding:12px 0 8px}
-
-
-
 #equipo {
   @include scrollFigure(-42px);
 }
@@ -1052,7 +1027,7 @@ body,
 // FIXES
 .top-header{
   .top.float{
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgba(255,255,255,0.8);
     box-shadow: 1px -2px 11px rgba(0,0,0,0.2);
     padding-bottom: 20px;
     svg path{
@@ -1582,3 +1557,124 @@ body,
     }
   }
 }
+
+.formulario{
+  background: #f0f0f0;
+  font-size: 18px;
+  margin: 100px 0;  
+  padding: 40px 50px 29px;
+  .intro-text{
+    color: #4c4c4c;
+    @include lato(18px);
+    margin-bottom: 35px;
+  }
+  .oficinas{
+    &__title{
+      color: #1a3204;
+      @include hindBold(28px);
+      @include triangle(23px,5px);
+    }
+    &__img{
+      margin-bottom: 20px;
+    }
+    &__item{
+      color: #4c4c4c;
+      @include lato(16px);
+      margin-left: 12px;
+      position: relative;
+      strong{
+        @include latoBold();
+      }
+      &:before{
+        background-color: #9e9475;
+        border-radius: 50%;
+        content: '';
+        display: block;
+        height: 7px;
+        left: -10px;
+        position: absolute;
+        top: 8px;
+        width: 7px;
+      }
+    }
+  }
+  &__wrapper{
+    display: flex;
+  }
+  &__section{
+    padding-top: 26px;
+    padding-bottom: 26px;
+    &:nth-child(2){
+      border-left: 1px solid #c7c2b2;;
+      padding-left: 40px;
+    }
+  }
+  &__label{
+    color: #4c4c4c;
+    display: flex;
+    @include lato(18px);
+    position: relative;
+    &:before{
+      background-color: #9e9475;
+      border-radius: 50%;
+      content: '';
+      display: block;
+      height: 7px;
+      left: -11px;
+      position: absolute;
+      top: 10px;
+      width: 7px;
+    }
+    &:after{
+      content: ':';
+      justify-self: flex-end;
+      align-self: flex-end;
+    }
+  }
+  .form-group {
+    margin: 0 0 26px;
+  }
+  .help-block {
+    margin-bottom: 12px;
+    margin-top: -12px;
+  }
+  .formulario__button{
+    background-color: transparent;
+    border: 2px solid transparent;
+    @include hindBold(20px);
+    padding: 18px 22px 11px;
+    &--submit{
+      color: #867f68;
+      border-color: #867f68;
+      &:hover{
+        background-color: rgba(0,0,0,0.1);
+      }
+    }
+  }
+}
+
+#contacto {
+  @include scrollFigure(-42px);
+}
+#contacto .container { position: relative; height: 100%;}
+#contacto .mod { background: url(../images/linea_media.jpg) center top repeat-y; margin: 20px 0}
+
+#contacto .formulario form label { padding: 0;}
+#contacto .formulario form .form-control { border-radius: 0px; background: #e4e2de; border:solid 1px #9e9475;}
+
+.form-horizontal .control-label { text-align: left;}
+#contacto .peque { font-size: 12px;}
+#contacto .btn { background:none; border:solid 1px #867f68; border-radius:0px; color: #867f68; font-size: 18px;}
+#contacto h4 {@include hindBold(24px);}
+#contacto h4 span { display:inline-block; background: url(../images/efecto_h4.png) right center no-repeat; padding: 3px 30px 0 0}
+#contacto p strong { font-weight: 700;}
+#contacto .oficinas p { background: url(../images/ico_bull.png) left 7px no-repeat; padding: 0 0 0 15px;}
+
+#contacto .formulario form .form-control.error{border:solid 2px #1f3608;}
+#contacto .formulario form .form-control.error::placeholder { color:#1f3608 }
+#contacto .formulario form .form-control.error:-ms-input-placeholder { color:#1f3608 }
+#contacto .formulario form .form-control.error::-ms-input-placeholder { color:#1f3608 }
+
+#contacto .formulario .exito { background:url(../images/ico_exito.png) center top no-repeat; padding: 90px 0 0 0; margin:100px 0}
+#contacto .formulario .error_envio { background:url(../images/ico_error_envio.png) center top no-repeat; padding: 90px 0 0 0; margin:100px 0}
+#contacto .formulario .error_envio a {background:none; border:solid 1px #867f68; border-radius:0px; color: #867f68; font-size: 18px; display: block; max-width: 150px; margin: 10px auto; width: 100%; padding:12px 0 8px}
