@@ -1,10 +1,22 @@
-@mixin triangle($size,$margin){
-  &:after{
-    content: '';
-    display: inline-block;
-    height: $size;
-    margin-left: $margin;
-    width: $size;
-    background-image: url('images/triangle.svg');
+@mixin triangle($size, $margin, $inactive: false){
+  @if $inactive == true {
+      &:after{
+      content: '';
+      display: inline-block;
+      height: $size;
+      margin-left: $margin;
+      width: $size;
+      background-image: url('images/triangle_inactive.svg');
+    }
+  }
+  @else {
+    &:after{
+      content: '';
+      display: inline-block;
+      height: $size;
+      margin-left: $margin;
+      width: $size;
+      background-image: url('images/triangle.svg');
+    }
   }
 }
