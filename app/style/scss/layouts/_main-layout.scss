@@ -58,7 +58,8 @@ a:focus, button:focus { outline: none!important}
           transition: width .3s;
           display: inline; 
           line-height: 150%;
-          @include latoThin(24px);
+          @include latoThin(21px);
+          text-transform: uppercase;
           &:after {
             content: '';
             display: block;
@@ -205,7 +206,7 @@ a:focus, button:focus { outline: none!important}
   .float-menu {
     display: flex;
     justify-content: flex-end;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     z-index: 20;
@@ -356,7 +357,7 @@ a:focus, button:focus { outline: none!important}
     transform: translateY(-1px);
   }
   .legal { 
-    border-top: solid 1px #908a78; 
+    border-top: solid 1px #414040; 
     color: #fff;
     @include lato(13px);
     padding: 22px 0 17px; 
@@ -435,16 +436,6 @@ a:focus, button:focus { outline: none!important}
 #equipo .resena p { font-size: 18px;}
 #equipo .resena p strong { font-weight: 700;}
 #equipo .resena .bajada {}
-
-#equipo #equipo_mod {}
-#equipo #equipo_mod .equipo_mod { padding: 0 0 40px}
-#equipo #equipo_mod .equipo_mod h3 { font-size: 36px; font-weight: 700; color: #202918;}
-#equipo #equipo_mod .equipo_mod h4 { font-size: 24px; font-weight: 700; color: #202918;}
-#equipo #equipo_mod .equipo_mod h4 span { border-bottom: solid 1px #202918; padding: 0 0 10px; max-width: 380px; display: inline-block; width: 100%;}
-#equipo #equipo_mod .equipo_mod p { font-size: 18px;}
-#equipo #equipo_mod .equipo_mod p strong { font-weight: 700;font-family: 'Lato', sans-serif;}
-#equipo #equipo_mod .equipo_mod p.gerencia { max-width: 380px; display: inline-block}
-
 
 #video {position: absolute;  bottom: 0; top: 0; right: 0; width: 100%; height: 100%;  background-color: black; /*background-image:  our video ;*/ background-position: center center; background-size: contain; object-fit: cover; z-index: 3;} 
 
@@ -1652,6 +1643,65 @@ body,
     }
   }
 }
+.team{
+  &__container{
+  }
+  &__item{
+    display: flex;
+    &--main{
+      &:nth-child(even){
+        flex-direction: row-reverse;
+        text-align: right;
+        .item__data--main{
+          display: flex;
+          flex-direction: column;
+          .item__description{
+            align-self: flex-end;
+          }
+        }
+      }
+    }
+    .item{
+      &__data{
+        &--main{
+          .item__title{
+            @include triangle(23px, 9px);
+            font-size: 36px;
+          }
+          .item__position{
+            font-size: 24px;
+          }
+          .item__description{
+            margin-top: 17px;
+          }
+        }
+      }
+      &__title{
+        color: #1a3204;
+        @include hindBold(22px);
+        @include triangle(19px, 5px);
+        margin: 0;
+      }
+      &__position{
+        color: #1a3204;
+        @include hind(20px);
+        border-bottom: 1px solid #9e9475;
+        margin: 0;
+        padding: 0 0 10px;
+      }
+      &__description{
+        margin-top: 9px;
+      }
+    }
+  }
+}
+
+#equipo #equipo_mod {}
+#equipo #equipo_mod .equipo_mod { padding: 0 0 40px}
+#equipo #equipo_mod .equipo_mod h4 span {  max-width: 380px; display: inline-block; width: 100%;}
+#equipo #equipo_mod .equipo_mod p { font-size: 18px;}
+#equipo #equipo_mod .equipo_mod p strong { font-weight: 700;font-family: 'Lato', sans-serif;}
+#equipo #equipo_mod .equipo_mod p.gerencia { max-width: 380px; display: inline-block}
 
 #contacto {
   @include scrollFigure(-42px);
