@@ -49,6 +49,12 @@ $(document).ready(function() {
       }
     }
   })
+  AOS.init()
+
+  $('#from_datos').submit(function(e) {
+    e.preventDefault()
+    console.log('enviado')
+  })
 })
 
 var timelineSwiper = new Swiper('.timeline .swiper-container', {
@@ -69,5 +75,3 @@ var timelineSwiper = new Swiper('.timeline .swiper-container', {
     }
   }
 })
-
-AOS.init()
