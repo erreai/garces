@@ -408,6 +408,7 @@ a:focus, button:focus { outline: none!important}
       @include hindBold(52px);
       margin: 0;
       text-shadow: 0px 0px 10px #000;
+      text-transform: uppercase;
     }
   }
 }
