@@ -442,7 +442,14 @@ a:focus, button:focus { outline: none!important}
 
 #trabaja_nosotros { padding: 100px 0 280px}
 .trabaja_nosotros { max-width: 940px; margin: 0 auto; height: 383px; position: relative;}
-.trabaja_nosotros .recuadro { position: absolute; bottom: -40%; left: 80px; padding: 45px; text-align: center; background: #f0f0f0;}
+.trabaja_nosotros .recuadro { 
+  position: absolute; 
+  bottom: -40%; 
+  left: 80px; 
+  padding: 45px; 
+  text-align: center; 
+  background: #f0f0f0;
+}
 .trabaja_nosotros .recuadro h2 { color: #1a3204; font-size: 42px; font-weight: 900;}
 .trabaja_nosotros .recuadro h2 span { font-size: 30px; font-weight: 400;}
 .trabaja_nosotros .recuadro p { font-size: 18px;}
@@ -555,22 +562,48 @@ a:focus, button:focus { outline: none!important}
 .mod_cuadro.right .cuadro { left: -120px; bottom: -70px;}
 
 .mod_planta {}
-.mod_planta h2 { text-align: center; background: url(../images/dot-title.gif) left 20px repeat-x;color: #1a3204; @include hindBold(52px);}
+.mod_planta h2 { text-align: center; background: url('../images/dot-title.gif') left 20px repeat-x;color: #1a3204; @include hindBold(52px);}
 .mod_planta h2 span { background: #fff; padding: 0 20px}
 .mod_planta .recuadro { width: 100%; max-width: 782px; margin: 40px auto}
-.mod_planta .recuadro .txt { float: left; width: 75%; margin: 0 0 40px; font-size: 18px;color: #4c4c4c;}
-.mod_planta .recuadro .boton { float: left; width: 25%; text-align: center; margin: 0 0 40px; padding: 16px 0 0 0}
-.mod_planta .recuadro .boton a {color: #867f68; border: solid 1px #867f68; padding: 17px 20px 14px; display: inline-block !important; width: initial !important; height: initial !important; font-weight: 700;}
+.mod_planta .recuadro .txt { 
+  @include lato(18px); 
+  float: left; 
+  width: 65%; 
+  margin: 0 0 40px; 
+  font-size: 18px;
+  color: #4c4c4c;
+  margin-right: 50px;
+}
+.no-padding{
+  &--x{
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
 
-#conoce_historia.trabaja { margin: 0 0 140px}
-#conoce_historia.trabaja .cuadro { position: absolute; background: #e9e8e8; width: 370px; padding: 60px 30px; text-align: center; bottom: -80px}
-#conoce_historia.trabaja .cuadro h2 { color: #1a3204; @include hindBold(52px);}
-#conoce_historia.trabaja .cuadro h2 span { display: block; @include hind(32px);}
-#conoce_historia.trabaja .cuadro p { font-weight: 700; color: #4c4c4c; padding: 0 0 20px}
-#conoce_historia.trabaja .cuadro a {color: #867f68; border: solid 1px #867f68; padding: 8px 14px 6px; display: inline-block !important; width: initial !important; height: initial !important; font-weight: 700; }
+.trabaja { margin: 0 0 140px}
+.trabaja .cuadro { 
+  background-image: linear-gradient(64deg, #e9e8e8 0%, #e9e8e8 41%, #f0f0f0 41%, #f0f0f0 100%);
+  bottom: -98px;
+  left: 66px;
+  padding: 77px 15px 83px;; 
+  position: absolute; 
+  text-align: center; 
+  width: 420px; 
+}
+.trabaja .cuadro h2 { color: #1a3204; @include hindBold(52px);}
+.trabaja .cuadro h2 span { display: block; @include hind(32px);}
+.trabaja .cuadro p { 
+  font-weight: 400; 
+  color: #4c4c4c; 
+  padding: 0 0 20px
+}
+.trabaja .cuadro a {
+  padding-bottom: 10px;
+}
 
-#conoce_historia.trabaja { min-height: 500px; padding: 0;}
-#conoce_historia.trabaja .container { height:500px; position: relative;}
+.trabaja { min-height: 500px; padding: 0;}
+.trabaja .container { height:500px; position: relative;}
 
 #detalle_noticia_mod .mod_noticia {background: url(../images/diagonal_noticias.svg) left bottom no-repeat #f0f0f0; margin: 0 0 40px 0; background-size: 80%}
 #detalle_noticia_mod .mod_noticia .int { padding: 40px 20px; font-size: 18px;}
@@ -1535,6 +1568,9 @@ body,
       color: #fff;
       background-color: rgba(0, 0, 0, 0.8);
     }
+    &--static{
+      margin-top: 0;
+    }
     &--image-comp{
       color: #867f68;
       background: transparent;
@@ -1775,6 +1811,10 @@ body,
       text-align: center;
     }
   }
+  &[class*="col"]{
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 #contacto {
@@ -1814,14 +1854,13 @@ body,
     display: flex;
     justify-content: space-between;
     padding: 0;
-    max-width: 350px;
+    max-width: fit-content;
   }
   &__item{
     border-left: 1px solid #9e9475;
     list-style: none;
     padding: 0 13px;
     text-align: center;
-    width: 130px;
     &:first-child{
       border-left: 0;
     }
