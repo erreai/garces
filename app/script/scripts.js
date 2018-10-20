@@ -10,6 +10,7 @@ $(document).ready(function() {
   $('.imgLiquid').imgLiquid({
     verticalAlign: top
   })
+  $('.image-compound__image').children('img').removeAttr('style')
 
   $('#carousel-lbx').owlCarousel({
     items: 1,

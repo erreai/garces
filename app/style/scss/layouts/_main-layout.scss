@@ -555,10 +555,10 @@ a:focus, button:focus { outline: none!important}
 .mod_cuadro.right .cuadro { left: -120px; bottom: -70px;}
 
 .mod_planta {}
-.mod_planta h2 { text-align: center; background: url(../images/linea_media2.jpg) left 20px repeat-x;color: #1a3204; @include hindBold(52px);}
+.mod_planta h2 { text-align: center; background: url(../images/dot-title.gif) left 20px repeat-x;color: #1a3204; @include hindBold(52px);}
 .mod_planta h2 span { background: #fff; padding: 0 20px}
 .mod_planta .recuadro { width: 100%; max-width: 782px; margin: 40px auto}
-.mod_planta .recuadro .txt { float: left; width: 75%; margin: 0 0 40px; font-size: 18px;}
+.mod_planta .recuadro .txt { float: left; width: 75%; margin: 0 0 40px; font-size: 18px;color: #4c4c4c;}
 .mod_planta .recuadro .boton { float: left; width: 25%; text-align: center; margin: 0 0 40px; padding: 16px 0 0 0}
 .mod_planta .recuadro .boton a {color: #867f68; border: solid 1px #867f68; padding: 17px 20px 14px; display: inline-block !important; width: initial !important; height: initial !important; font-weight: 700;}
 
@@ -1535,6 +1535,26 @@ body,
       color: #fff;
       background-color: rgba(0, 0, 0, 0.8);
     }
+    &--image-comp{
+      color: #867f68;
+      background: transparent;
+      border-color: #867f68;
+      padding-bottom: 10px;
+      &:hover{
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+    }
+    &--go-fields{
+      background: transparent;
+      border-color: #867f68;
+      color: #867f68;
+      margin-left: 30px;
+      margin-top: 10px;
+      padding-bottom: 10px;
+      &:hover{
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+    }
   }
 
   &--history{
@@ -1696,13 +1716,66 @@ body,
     }
   }
 }
-
-#equipo #equipo_mod {}
-#equipo #equipo_mod .equipo_mod { padding: 0 0 40px}
-#equipo #equipo_mod .equipo_mod h4 span {  max-width: 380px; display: inline-block; width: 100%;}
-#equipo #equipo_mod .equipo_mod p { font-size: 18px;}
-#equipo #equipo_mod .equipo_mod p strong { font-weight: 700;font-family: 'Lato', sans-serif;}
-#equipo #equipo_mod .equipo_mod p.gerencia { max-width: 380px; display: inline-block}
+.flex-container{
+  display: flex;
+  flex-direction: column;
+}
+.image-compound{
+  margin-bottom: 230px;
+  &:nth-child(even){
+    align-self: flex-end;
+    .image-compound__image-container{
+      padding-right: 0;
+      padding-left: 76px;
+    }
+    .image-compound__textbox{
+      right: auto;
+      left: -12vw;
+    }
+  }
+  &__image-container{
+    padding-top: 72px;
+    padding-bottom: 72px;
+    padding-right: 76px;
+  }
+  .imgLiquid{
+    .image-compound__image{
+      img{
+        display: block;
+        visibility: visible;
+        width: 100%;
+      }
+    }
+  }
+  &__wrapper{
+    position: relative;
+  }
+  &__textbox{
+    background-image: linear-gradient(64deg, #e9e8e8 0%, #e9e8e8 41%, #f0f0f0 41%, #f0f0f0 100%);
+    display: block;
+    padding: 79px 29px;
+    position: absolute;
+    right: -12vw;
+    text-align: center;
+    top: 25%;
+    z-index: 1;
+    h2{
+      color: #1a3204;
+      margin: 0 0 30px 0;
+      @include hind(32px);
+      text-align: center;
+      span{
+        display: block;
+        @include hindBold(52px);
+      }
+    }
+    p{
+      color: #4c4c4c;
+      @include latoBold(18px);
+      text-align: center;
+    }
+  }
+}
 
 #contacto {
   @include scrollFigure(-42px);
