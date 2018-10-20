@@ -1802,3 +1802,40 @@ body,
 #contacto .formulario .exito { background:url(../images/ico_exito.png) center top no-repeat; padding: 90px 0 0 0; margin:100px 0}
 #contacto .formulario .error_envio { background:url(../images/ico_error_envio.png) center top no-repeat; padding: 90px 0 0 0; margin:100px 0}
 #contacto .formulario .error_envio a {background:none; border:solid 1px #867f68; border-radius:0px; color: #867f68; font-size: 18px; display: block; max-width: 150px; margin: 10px auto; width: 100%; padding:12px 0 8px}
+
+.intern-nav{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 90px;
+  padding-bottom: 10px;
+  padding-top: 20px;
+  &__wrapper{
+    align-self: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    max-width: 350px;
+  }
+  &__item{
+    border-left: 1px solid #9e9475;
+    list-style: none;
+    padding: 0 13px;
+    text-align: center;
+    width: 130px;
+    &:first-child{
+      border-left: 0;
+    }
+  }
+  &__link{
+    color: #9e9475;
+    @include hind(20px);
+    text-transform: uppercase;
+    &:hover,&:focus{
+      color: #9e9475;
+      font-weight: 700;
+    }
+    &--active{
+      font-weight: 700;
+    }
+  }
+}
