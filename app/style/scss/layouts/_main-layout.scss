@@ -1952,6 +1952,28 @@ body,
   .intern-nav{
     margin-bottom: 40px;
   }
+  &__message{
+    margin-top: 30px;
+    text-align: center;
+    .message__icon{
+      background-image: url('../images/ico_exito.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      display: inline-block;
+      height: 58px;
+      width: 58px;
+    }
+    &--error{
+      .message__icon{
+        background-image: url('../images/ico_error_envio.png');
+      }
+    }
+    .message__text{
+      color: #867f68;
+      @include latoBold(18px);
+      margin-top: 18px;
+    }
+  }
 }
 .form-cols{
   &--two{
