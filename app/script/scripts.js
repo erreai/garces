@@ -53,7 +53,10 @@ $(document).ready(function() {
 
   $('#from_datos').submit(function(e) {
     e.preventDefault()
-    console.log('enviado')
+    $(this).parent().fadeOut()
+    $('#ficha').fadeIn()
+    $('#step_datos').removeClass('active')
+    $('#step_ficha').addClass('active')
   })
 })
 

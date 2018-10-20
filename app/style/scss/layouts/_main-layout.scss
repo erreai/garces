@@ -1870,17 +1870,19 @@ body,
     padding: 0;
     max-width: fit-content;
   }
-  &__link{
+  &__text,&__link{
     color: #9e9475;
     @include hind(20px);
     text-transform: uppercase;
+    &--active{
+      font-weight: 700;
+    }
+  }
+  &__link{
     &:hover,&:focus{
       color: #9e9475;
       font-weight: 700;
       text-decoration: none;
-    }
-    &--active{
-      font-weight: 700;
     }
   }
   &__item{
@@ -1895,7 +1897,7 @@ body,
       @include triangle(19px, 10px, true);
       &.active{
         @include triangle(19px, 10px);
-        .intern-nav__link {
+        .intern-nav__link, .intern-nav__text {
           font-weight: 700;
         }
       }
@@ -1940,6 +1942,15 @@ body,
       @include lato(12px);
       text-indent: 20px;
     }
+  }
+  .intro-text{
+    color: #4c4c4c;
+    @include lato(18px);
+    margin: 0 0 22px;
+    text-align: center;
+  }
+  .intern-nav{
+    margin-bottom: 40px;
   }
 }
 .form-cols{
