@@ -8,10 +8,14 @@ $(document).ready(function() {
   })
 
   $('.imgLiquid').imgLiquid({
-    verticalAlign: top
+    verticalAlign: 'top'
+  })
+  $('.imgLiquidNoFill').imgLiquid({
+    fill: false,
+    horizontalAlign: 'center'
   })
   $('.image-compound__image').children('img').removeAttr('style')
-
+  $('.image_front').children('img').removeAttr('style')
   $('#carousel-lbx').owlCarousel({
     items: 1,
     lazyLoad: true,

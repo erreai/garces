@@ -37,3 +37,12 @@
   -moz-transform: rotate3d($x, $y, $z);
   transform: rotate3d($x, $y, $z);
 }
+
+
+@mixin itemTitle($fontSize, $size, $margin, $inactive: false){
+  @include hindBold($fontSize);
+  margin-bottom: 0;
+  margin-top: 0;
+  text-transform: uppercase;
+  @include triangle($size, $margin, $inactive);
+}
