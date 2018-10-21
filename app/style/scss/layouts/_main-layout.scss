@@ -544,23 +544,6 @@ a:focus, button:focus { outline: none!important}
 #modal_galeria .owl-theme .owl-nav .owl-prev { left: -50px;}
 #modal_galeria .owl-theme .owl-nav .owl-next { right: -50px;}
 
-
-.mod_cuadro { margin:0 0 200px}
-.mod_cuadro .img { position: relative; display: inline-block}
-.mod_cuadro.left { text-align: left;}
-.mod_cuadro.right { text-align: right}
-
-.mod_cuadro .cuadro { position: absolute; background: #e9e8e8; width: 450px; padding: 60px 30px; text-align: center;}
-.mod_cuadro .cuadro h2 { color: #1a3204; @include hindBold(52px);}
-.mod_cuadro .cuadro h2 span { display: block; @include hind(32px);}
-.mod_cuadro .cuadro p { }
-.mod_cuadro .cuadro a {color: #867f68; border: solid 1px #867f68; padding: 8px 14px 6px; display: inline-block !important; width: initial !important; height: initial !important; font-weight: 700; }
-
-
-
-.mod_cuadro.left .cuadro { right: -120px; bottom: -70px;}
-.mod_cuadro.right .cuadro { left: -120px; bottom: -70px;}
-
 .mod_planta {}
 .mod_planta h2 { text-align: center; background: url('../images/dot-title.gif') left 20px repeat-x;color: #1a3204; @include hindBold(52px);}
 .mod_planta h2 span { background: #fff; padding: 0 20px}
@@ -802,21 +785,6 @@ a.ir_portal {color: #ffffff; border: solid 1px #ffffff;@include hindBold(20px); 
 .mod_cuadro .cuadro.prod_detalle h2 { text-align: center}
 .mod_cuadro .cuadro.prod_detalle ul { margin: 0; padding: 0 0 0 50px; }
 .mod_cuadro .cuadro.prod_detalle ul li { margin: 0; padding: 0; width: 50%; float: left; font-size: 18px}
-
-
-.temporada { text-align: center; padding: 40px 0 80px}
-.temporada ul { display: inline-block; border-top: solid 1px #9e9475; border-left: solid 1px #9e9475; padding: 0; margin: 0;}
-.temporada ul li { list-style: none; float: left; width: 40px; height: 60px; display: inline-block; padding: 0; margin: 0;}
-.temporada ul li .mes { display: block; background: #e6e3db; height: 30px; line-height: 30px; border-bottom: solid 1px #9e9475; border-right: solid 1px #9e9475;}
-.temporada ul li .prod { background-color: #f7f7f4; display: block; height: 30px; line-height: 30px; border-bottom: solid 1px #9e9475; border-right: solid 1px #9e9475;}
-
-.temporada ul li .prod.p1 { background-image: url(../images/p1.png); background-position: center center; background-repeat: no-repeat}
-.temporada ul li .prod.p2 { background-image: url(../images/p2.png); background-position: center center; background-repeat: no-repeat}
-.temporada ul li .prod.p3 { background-image: url(../images/p3.png); background-position: center center; background-repeat: no-repeat}
-.temporada ul li .prod.p4 { background-image: url(../images/p4.png); background-position: center center; background-repeat: no-repeat}
-.temporada ul li .prod.p5 { background-image: url(../images/p5.png); background-position: center center; background-repeat: no-repeat}
-.temporada ul li .prod.p6 { background-image: url(../images/p6.png); background-position: center center; background-repeat: no-repeat}
-
 
 .tit_center { color:#202918; text-align: center; @include hindBold(38px); margin: 30px 0; text-transform: uppercase}
 
@@ -1338,6 +1306,11 @@ body,
       margin-left: 12px;
       width: 29px;
     }
+  }
+}
+.separate-top-350{
+  @include respond-to(minTablet){
+    margin-top: 250px;
   }
 }
 .separate-top-250{
@@ -2150,5 +2123,135 @@ body,
     display: block;
     color: #1a3204;
     @include hind(32px);
+  }
+}
+
+.presentation{
+  &-card{
+    margin-left: -10px;
+    position: relative;
+    &--reverse{
+      display: flex;
+      flex-direction: row-reverse;
+      margin-left: 0;
+      margin-right: -10px;
+    }
+  }
+  &__image{}
+  &__box{
+    background-color: #f0f0f0;
+    bottom: -30%;
+    left: 38%;
+    max-width: 580px;
+    position: absolute;
+    width: fit-content;
+    p{
+      color: #4c4c4c;
+      @include lato(18px);
+      margin-left: 40px;
+      margin-right: 40px;
+      margin-top: 20px;
+      &:first-child{
+        margin-top: 74px
+      }
+      &:last-child{
+        margin-bottom: 80px;
+      }
+    }
+  }
+  &__title{
+    align-items: center;
+    color: #202918;
+    display: flex;
+    @include hindBold(38px);
+    justify-content: center;
+    img{
+      margin-lefT: 13px;
+    }
+  }
+  &__list{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 60px auto;
+    padding: 0;
+    position: relative;
+    width: 50%;
+    li{
+      color: #4c4c4c;
+      display: block;
+      @include lato(18px);
+      list-style: none;
+      margin-bottom: 20px;
+      position: relative;
+      text-indent: 20px;
+      width: 50%;
+      &:before{
+        background-color: #9e9475;
+        border-radius: 50%;
+        content: '';
+        display: block;
+        height: 5px;
+        left: 7px;
+        position: absolute;
+        top: 10px;
+        width: 5px;
+      }
+    }
+  }
+}
+
+.temporada { text-align: center; padding: 40px 0 80px}
+.temporada ul { display: inline-block; border-top: solid 1px #9e9475; border-left: solid 1px #9e9475; padding: 0; margin: 0;}
+.temporada ul li { list-style: none; float: left; height: 60px; display: inline-block; padding: 0; margin: 0;}
+.temporada ul li .mes { display: block; line-height: 30px; border-bottom: solid 1px #9e9475;}
+.temporada ul li .prod { background-color: #f7f7f4; display: block; height: 30px; line-height: 30px; border-bottom: solid 1px #9e9475; border-right: solid 1px #9e9475;}
+
+.temporada ul li .prod.p1 { background-image: url(../images/p1.png); background-position: center center; background-repeat: no-repeat}
+.temporada ul li .prod.p2 { background-image: url(../images/p2.png); background-position: center center; background-repeat: no-repeat}
+.temporada ul li .prod.p3 { background-image: url(../images/p3.png); background-position: center center; background-repeat: no-repeat}
+.temporada ul li .prod.p4 { background-image: url(../images/p4.png); background-position: center center; background-repeat: no-repeat}
+.temporada ul li .prod.p5 { background-image: url(../images/p5.png); background-position: center center; background-repeat: no-repeat}
+.temporada ul li .prod.p6 { background-image: url(../images/p6.png); background-position: center center; background-repeat: no-repeat}
+
+.temporada{
+  margin-top: 250px;
+  &__title{
+    color: #202918;
+    @include hindBold(38px);
+    margin-bottom: 23px;
+  }
+  &__table{
+    background: #f7f7f4;
+    border-bottom: solid 1px #9e9475;
+    li{
+      border-right: solid 1px #9e9475;
+      min-height: 100px;
+    }
+    .mes{
+      color: #4c4c4c;
+      background-color: #e6e3db;
+      @include lato(18px);
+      padding: 10px;
+    }
+    img{
+      display: block;
+      margin: auto;
+      transform: translateY(8px);
+    }
+  }
+}
+.map__holder{
+  margin-bottom: 128px;
+  margin-top: 60px;
+  img{}
+}
+.beneficios{
+  &__title{
+    background: url('../images/linea.jpg') no-repeat center bottom;;
+    color: #202918;
+    @include hindBold(38px);
+    margin-bottom: 50px;
+    text-align: center;
+    text-transform: uppercase;
   }
 }
