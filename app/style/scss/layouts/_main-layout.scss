@@ -626,12 +626,13 @@ a.ir_portal {color: #ffffff; border: solid 1px #ffffff;@include hindBold(20px); 
 #productores_mod .container { position: relative; padding: 40px 15px 80px}
 #productores_mod a.acceso { 
   background: url('../images/bg_link_prov.png') left top no-repeat; 
+  border: 1px solid #fff;
   color: #fff;
   height: 75px; 
   line-height: 75px; 
   position: fixed;   
   right: 0;
-  top: 150px; 
+  bottom: 0; 
   width: 378px; 
   z-index: 2;
   &:hover{
