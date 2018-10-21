@@ -1204,6 +1204,9 @@ body,
       pointer-events: none;
       position: absolute;
       width: 50%;
+      @include respond-to(maxMobile){
+        width: 80%;
+      }
     }
   }
   &-title{
