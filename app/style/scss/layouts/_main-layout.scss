@@ -2291,3 +2291,9 @@ body,
 .button--lazyLoad{
   margin: auto;
 }
+.column-wrapper{
+  width: 100%;
+  &:first-child{
+    margin-bottom: 40px;
+  }
+}
