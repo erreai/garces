@@ -529,8 +529,11 @@ a:focus, button:focus { outline: none!important}
 .mod_planta h2 span { background: #fff; padding: 0 20px}
 .mod_planta .recuadro { 
   width: 100%; 
-  max-width: 782px; 
-  margin: 40px auto
+  max-width: 820px; 
+  margin: 40px auto;
+  img{
+    width: 100%;
+  }
 }
 .mod_planta .recuadro .txt { 
   @include lato(18px); 
@@ -594,7 +597,7 @@ p.data { background: url(../images/diagonal_2.svg) left bottom no-repeat #f0f0f0
 a.ir_portal {color: #ffffff; border: solid 1px #ffffff;@include hindBold(20px); padding: 12px 14px 6px; display: inline-block !important; width: initial !important; height: initial !important; font-weight: 700;}
 
 
-.cuadros { max-width: 820px; margin: 0 auto}
+.cuadros { max-width: 820px; margin: 0 auto 70px}
 .cuadros .mod_cuadros { margin: 0 0 30px}
 .cuadros .mod_cuadros .img { width: 139px; float: left;}
 .cuadros .mod_cuadros .txt { float:left; padding: 0 0 0 20px; width: 681px; position: relative;}
@@ -603,17 +606,37 @@ a.ir_portal {color: #ffffff; border: solid 1px #ffffff;@include hindBold(20px); 
 .cuadros .mod_cuadros .txt .centrado .texto p { padding: 0!important}
 
 #productores_mod { text-align: center; }
-#productores_mod a.link {color: #000;border: solid 1px #000;padding: 17px 20px 14px;display: inline-block !important;width: initial !important;height: initial !important;@include hindBold(20px);}
+#productores_mod a.link {
+  background-image: linear-gradient(45deg, #fff 0%, #fff 50%, #fff 52%, #fff 100%);
+  color: #867f68;
+  border: solid 2px #867f68;
+  padding: 17px 20px 13px;
+  display: inline-block !important;
+  width: initial !important;
+  height: initial !important;
+  @include hindBold(20px);
+  transition: background-image .3s ease-in;
+  &:hover{
+    background-image: linear-gradient(45deg, #9f9a87 0%, #9f9a87 50%, #878068 52%, #878068 100%);
+    color:#fff;
+    padding: 19px 22px 15px;
+    border: 0;
+  }
+}
 #productores_mod .container { position: relative; padding: 40px 15px 80px}
 #productores_mod a.acceso { 
-  position: absolute;   
-  right: -11vw;
-  bottom: -1px; 
   background: url('../images/bg_link_prov.png') left top no-repeat; 
-  width: 378px; 
+  color: #fff;
   height: 75px; 
   line-height: 75px; 
-  color: #fff;
+  position: fixed;   
+  right: 0;
+  top: 150px; 
+  width: 378px; 
+  z-index: 2;
+  &:hover{
+    text-decoration: underline;
+  }
 }
 .items_mod { max-width: 990px; margin: 0 auto; padding: 0 0 100px}
 .items_mod .modulo { position: relative}
@@ -1569,6 +1592,13 @@ body,
         background-color: rgba(0, 0, 0, 0.3);
       }
     }
+    &--top-bar{
+      background-color: rgba(0,0,0,0.45);
+      border-color: #dbdacf;
+      color: #dbdacf;
+      padding-bottom: 10px;
+      text-transform: uppercase;
+    }
   }
 
   &--history{
@@ -2296,5 +2326,34 @@ body,
   width: 100%;
   &:first-child{
     margin-bottom: 40px;
+  }
+}
+.items_mod{
+  .modulo{
+    h3{
+      z-index: 1;
+    }
+    a{
+      position: relative;
+      &:after{
+        opacity: 0;
+        transition: all .3s ease-out;
+        content: '';
+      }
+      &:hover{
+        display: block;
+        height: fit-content;
+        position: relative;
+        &:after{
+          display: block;
+          @include diagonalShadow();
+          height: 100%;
+          left: 0;
+          position: absolute;
+          top: 0;
+          width: 100%;
+        }
+      }
+    }
   }
 }
