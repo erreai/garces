@@ -19,7 +19,7 @@ a:focus, button:focus { outline: none!important}
     font-weight: 300;
     margin: 0;
     opacity: 0;
-    padding: 40px 0px 10px;
+    padding: 10px 0px 10px;
     right: 0px;
     text-align: left;
     top: 0px;
@@ -178,7 +178,7 @@ a:focus, button:focus { outline: none!important}
     cursor: pointer;
     position: relative;
     right: 40px;
-    transform: translateY(0);
+    transform: translateY(10px);
     z-index: 10;
     &:after{
       color: #fff;
@@ -414,7 +414,7 @@ a:focus, button:focus { outline: none!important}
 }
 #miga {  
   color: #4c4c4c;
-  @include lato(17px);
+  @include lato(16px);
   font-style: italic;
   padding: 30px; 
   a { 
@@ -1315,7 +1315,7 @@ body,
     border: 1px solid #626262;
     background-color: #3a3a3a;
     color: #fff;
-    min-width: 45%;
+    min-width: 230px;
     padding: 18px 21px;
     @include lato(16px);
     &:focus{
@@ -1335,7 +1335,7 @@ body,
 }
 .separate-top-250{
   @include respond-to(minTablet){
-    padding-top: 40px;
+    padding-top: 20px;
   }
 }
 .separate-top-100{
@@ -1354,6 +1354,18 @@ body,
   margin-bottom: 15px;
   @include respond-to(minTablet){
     margin-bottom: 30px;
+  }
+}
+.separate-top-60{
+  margin-top: 15px;
+  @include respond-to(minTablet){
+    margin-top: 30px;
+  }
+}
+.separate-bottom-60{
+  margin-bottom: 30px;
+  @include respond-to(minTablet){
+    margin-bottom: 60px;
   }
 }
 .divider{
@@ -1826,7 +1838,7 @@ body,
     }
     p{
       color: #4c4c4c;
-      @include latoBold(18px);
+      @include lato(18px);
       text-align: center;
     }
   }
@@ -2021,6 +2033,9 @@ body,
   margin-bottom: 200px;
   &__item{
     display: flex;
+    &:focus{
+      outline: 0;
+    }
     .item{
       &__wrapper{
         padding: 100px 50px 100px 0;
@@ -2080,6 +2095,26 @@ body,
     img{
       display: block;
       visibility: visible;
+    }
+  }
+}
+.places{
+  margin-top: 40px;
+  .item{
+    &__title{
+      border-bottom: 1px solid #9e9475;
+      width: fit-content;
+    }
+    &__description{
+      color: #4c4c4c;
+      a{
+        color: #4c4c4c;
+      }
+    }
+  }
+  .team__item--main:nth-child(even){
+    .item__title{
+      align-self: flex-end;
     }
   }
 }
