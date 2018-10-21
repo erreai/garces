@@ -2194,6 +2194,22 @@ body,
         margin-bottom: 80px;
       }
     }
+    ol{
+      li{
+        list-style-type: disc;
+        color: #4c4c4c;
+        @include lato(18px);
+        margin-left: 40px;
+        margin-right: 40px;
+        margin-top: 20px;
+        &:first-child{
+          margin-top: 74px
+        }
+        &:last-child{
+          margin-bottom: 80px;
+        }
+      }
+    }
   }
   &__title{
     align-items: center;
