@@ -499,29 +499,6 @@ a:focus, button:focus { outline: none!important}
 
   }
 }
-
-#noticias { max-width: 940px; margin: 0 auto;}
-
-#noticias .noticia_ppal { background: url(../images/diagonal_noticias.svg) left bottom no-repeat #f0f0f0; margin: 0 0 40px 0}
-#noticias .noticia_ppal .tit { text-align: left; padding: 40px 30px; margin: 0; background: none}
-#noticias .noticia_ppal .tit span { padding: 5px 35px 0 0; display: inline-block;background: url(../images/bullet.svg) right 0px no-repeat;background-size: 30px;}
-#noticias .noticia_ppal .tit span h2 {@include hindBold(32px); display: inline-block; margin: 0; padding: 0; color: #1a3204; line-height: 32px}
-#noticias .noticia_ppal .tit h4 { padding: 0; margin: 0; font-size: 20px; color: #1a3204; font-weight: 700;}
-#noticias .noticia_ppal .parrafos { padding: 40px 30px; margin: 0;font-size: 18px;}
-#noticias .noticia_ppal .parrafos p { }
-#noticias .noticia_ppal .parrafos a { font-weight: 700; font-style: italic; color: #9e9475;}
-
-#noticias .mod_noticia {background: url(../images/diagonal_noticias.svg) left bottom no-repeat #f0f0f0; margin: 0 0 40px 0; background-size: 80%}
-#noticias .mod_noticia .int { padding: 40px 20px; font-size: 18px;}
-#noticias .mod_noticia .int span {padding: 5px 35px 0 0; display: inline;background: url(../images/bullet.svg) right bottom no-repeat;background-size: 19px;}
-#noticias .mod_noticia .int h3 {@include hindBold(24px); display: inline; margin: 0; padding: 0; color: #1a3204; line-height: 24px}
-#noticias .mod_noticia .int p {}
-
-
-#noticias a.cargar {border: solid 1px #867f68; color: #867f68; padding: 17px 20px 14px; display: block !important; height: initial !important; @include hindBold(20px); width: 100%; max-width:240px; margin:0 auto; text-align:center}
-
-
-
 #detalle_noticia { margin: 0}
 #detalle_noticia .bajada { text-align: center; padding: 0 0 40px}
 #detalle_noticia p.img { margin: 0 0 20px 20px; text-align: center; font-size: 16px;}
@@ -1429,7 +1406,7 @@ body,
   padding: 110px 15px 42px;
 }
 .modal.fade{
-  background-color: rgba(0,0,0,0.85);
+  background-color: rgba(0,0,0,0.8);
   .close{
     position: absolute;
     top: 15px;
@@ -1462,6 +1439,7 @@ body,
     display: flex;
     flex-direction: column;
     padding: 50px 70px 30px;
+    border-radius: 0;
   }
   .logos{
     align-self: flex-end;
@@ -2206,13 +2184,6 @@ body,
 .temporada ul li .mes { display: block; line-height: 30px; border-bottom: solid 1px #9e9475;}
 .temporada ul li .prod { background-color: #f7f7f4; display: block; height: 30px; line-height: 30px; border-bottom: solid 1px #9e9475; border-right: solid 1px #9e9475;}
 
-.temporada ul li .prod.p1 { background-image: url(../images/p1.png); background-position: center center; background-repeat: no-repeat}
-.temporada ul li .prod.p2 { background-image: url(../images/p2.png); background-position: center center; background-repeat: no-repeat}
-.temporada ul li .prod.p3 { background-image: url(../images/p3.png); background-position: center center; background-repeat: no-repeat}
-.temporada ul li .prod.p4 { background-image: url(../images/p4.png); background-position: center center; background-repeat: no-repeat}
-.temporada ul li .prod.p5 { background-image: url(../images/p5.png); background-position: center center; background-repeat: no-repeat}
-.temporada ul li .prod.p6 { background-image: url(../images/p6.png); background-position: center center; background-repeat: no-repeat}
-
 .temporada{
   margin-top: 250px;
   &__title{
@@ -2254,4 +2225,66 @@ body,
     text-align: center;
     text-transform: uppercase;
   }
+}
+.post{
+  &__head{
+    margin: 0;
+    padding: 23px 20px 0; 
+    text-align: left; 
+  }
+  &__title{
+    color: #1a3204;
+    @include itemTitle(24px,19px, 5px);
+    margin: 0;
+    text-transform: unset;
+  }
+  &__subtitle{
+    color: #1a3204;
+    @include latoBold(20px);
+    margin: 0;
+  }
+  &__content{
+    @include lato(18px);
+    padding: 20px 20px 30px;
+  }
+  &__read-more{
+    color: #9e9475;
+    @include latoBold(18px);
+    font-style: italic;
+    &:hover,&:focus,&:active{
+      color: #9e9475;
+      text-decoration: underline;
+    }
+  }
+  &__card{
+    background: url('../images/diagonal_noticias.svg') left bottom no-repeat #f0f0f0;
+    background-size: 80%;
+    margin-bottom: 60px;
+    &--hightlight{
+      margin-bottom: 40px;
+      .post{
+        &__content{
+          padding: 55px 60px 60px;
+        }
+        &__title{
+          font-size: 32px;
+        }
+        &__subtitle{
+          font-size: 20px;
+        }
+        &__head{
+          padding: 60px 30px 0; 
+        }
+        &__content{
+          padding-top: 60px;
+        }
+      }
+    }
+  }
+}
+.section--small{
+  max-width: 940px; margin-left: auto; margin-right: auto;
+}
+.button--lazyLoad{
+  margin: auto;
 }
