@@ -2171,6 +2171,9 @@ body,
       flex-direction: row-reverse;
       margin-left: 0;
       margin-right: -10px;
+      .presentation__box{
+        left: 25%;
+      }
     }
   }
   &__image{}
