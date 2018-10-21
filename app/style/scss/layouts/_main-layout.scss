@@ -564,7 +564,11 @@ a:focus, button:focus { outline: none!important}
 .mod_planta {}
 .mod_planta h2 { text-align: center; background: url('../images/dot-title.gif') left 20px repeat-x;color: #1a3204; @include hindBold(52px);}
 .mod_planta h2 span { background: #fff; padding: 0 20px}
-.mod_planta .recuadro { width: 100%; max-width: 782px; margin: 40px auto}
+.mod_planta .recuadro { 
+  width: 100%; 
+  max-width: 782px; 
+  margin: 40px auto
+}
 .mod_planta .recuadro .txt { 
   @include lato(18px); 
   float: left; 
@@ -573,6 +577,9 @@ a:focus, button:focus { outline: none!important}
   font-size: 18px;
   color: #4c4c4c;
   margin-right: 50px;
+}
+.mod_planta > img{
+  margin: 0 auto;
 }
 .no-padding{
   &--x{
@@ -2116,5 +2123,32 @@ body,
     .item__title{
       align-self: flex-end;
     }
+  }
+}
+
+.item__photo--to-gallery{
+  display: block; 
+  position: relative;
+  overflow: hidden;
+  &:after{
+    content: '';
+    background: url('../images/glass_plus.png') no-repeat;
+    bottom: 13px;
+    height: 30px;
+    position: absolute;
+    right: 13px;
+    width: 30px;
+  }
+  img{
+    display: block;
+    width: 100%;
+  }
+}
+.modal-title{
+  text-transform: uppercase;
+  small{
+    display: block;
+    color: #1a3204;
+    @include hind(32px);
   }
 }
