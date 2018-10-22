@@ -1,4 +1,6 @@
 $(document).ready(function() {
+  $('#preload').remove()
+  $('body').removeClass('loading')
   $('.close-dimmer').click(function() {
     $(this).closest('body').addClass('dimmer-open')
   })
