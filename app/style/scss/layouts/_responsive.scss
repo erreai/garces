@@ -82,11 +82,12 @@
 	.top-header .close-dimmer{
 		transform: translateY(10px);
 	}
-	.section-title__title{
+	.section-title > h2{
 		width: 100%;
-		@include itemTitle(32px, 20px, 8px)
+		@include itemTitle(32px, 20px, 8px);
+		margin-right: 0;
 	}
-	.section-title__subtitle{
+	.section-title > h4{
 		font-size: 16px;
 	}
 	.certificates .certificate{
@@ -164,6 +165,134 @@
 				height: auto;
 				max-width: 100%;
 			}
+		}
+	}
+	.products__item {
+		.item__wrapper{
+			width: 100%;
+		}
+	}
+	.products article.products__item .item__description{
+		background: #f0f0f0;
+		padding: 30px;
+		position: absolute;
+		width: 100%;
+	}
+	.intern-nav__wrapper{
+		flex-wrap: wrap;
+		.intern-nav__item{
+			margin-top: 5px;
+			width: 33.3%;
+			&:nth-child(4){
+				border-left: 0;
+			}
+		}
+	}
+	.formulario .oficinas__img{
+		width: 100%;
+	}
+	.image-compound{
+		margin-bottom: 300px;
+		width: 100%;
+	}
+	.mod_planta .recuadro{
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		.txt{
+			margin: 0;
+			text-align: center;
+			width: 100%;
+		}
+		.boton{
+			margin-bottom: 30px;
+			a {
+				margin-left: 0;
+			}
+		}
+	}
+	.team__item{
+		margin-bottom: 40px;
+		&--main{
+			img{
+				width: 100%;
+			}
+		}
+		.img{
+			margin-bottom: 20px;
+		}
+	}
+	.presentation__title{
+		img{
+			display: none;
+		}
+	}
+	.presentation__list{
+		width: 90%;
+		li{
+			width: 50%;
+		}
+	}
+	.temporada ul {
+		background-color: #fff;
+		border-top: 0;
+		border-left: 0;
+		border-bottom: 0;
+		li{
+			background-color: #f7f7f4;
+			border: 1px solid #9e9475;
+			margin: 2px;
+		}
+	}
+	.presentation__image{
+		position: absolute;
+		width: 100%;;
+	}
+	.presentation__box{
+		position: relative;
+		left: 0px !important;
+		width: 90%;
+		margin: auto;
+		top: 20px;
+		&>h2{
+			padding-top: 20px;
+		}
+	}
+	.image-compound__textbox{
+		right: 0;
+	}
+	.image-compound:nth-child(even) .image-compound__textbox {
+		right: auto;
+		left: 0;
+	}
+	#productores_mod a.acceso{
+		width: 100%;
+	}
+	.mod_planta h2 span{
+		font-size: 46px;
+		letter-spacing: -3px;
+		padding: 0;
+	}
+	.cuadros .mod_cuadros .txt .centrado .texto span h4{
+		word-break: break-word;
+	}
+	.image-compound--no-bg:nth-child(2) .image-compound__textbox{
+		left: 0 !important;
+		width: 100%;
+	}
+	.image-compound__image-container{
+		padding-right: 0;
+	}
+	.image-compound--no-bg .image-compound__textbox{
+		right: 0;
+	}
+	.career{
+		padding: 45px 20px;
+		.intern-nav{
+			display: none;
+		}
+		.form-cols--two .form-group{
+			width: 100%;
 		}
 	}
 }

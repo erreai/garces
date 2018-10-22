@@ -600,9 +600,9 @@ a.ir_portal {color: #ffffff; border: solid 1px #ffffff;@include hindBold(20px); 
 
 
 .cuadros { max-width: 820px; margin: 0 auto 70px}
-.cuadros .mod_cuadros { margin: 0 0 30px}
+.cuadros .mod_cuadros { margin: 0 0 30px; display: flex;}
 .cuadros .mod_cuadros .img { width: 139px; float: left;}
-.cuadros .mod_cuadros .txt { float:left; padding: 0 0 0 20px; width: 681px; position: relative;}
+.cuadros .mod_cuadros .txt { float:left; padding: 0 0 0 20px; position: relative;}
 .cuadros .mod_cuadros .txt .centrado { display: table; vertical-align: middle; height: 118px; width: 100%;}
 .cuadros .mod_cuadros .txt .centrado .texto {vertical-align:middle; display: table-cell;}
 .cuadros .mod_cuadros .txt .centrado .texto p { padding: 0!important}
@@ -994,7 +994,7 @@ body,
     background: url('../images/linea.jpg') center bottom no-repeat;
     padding: 67px 0 19px;
     text-align: center; 
-    &__title{
+    &>h2{
       color: #202918;
       display: inline-block; 
       @include hindBold(52px);
@@ -1004,7 +1004,7 @@ body,
       padding: 0;
       text-transform: uppercase;
     }
-    &__subtitle{
+    &>h4{
       @include hindMedium(20px);
       margin: 0;
       text-transform: uppercase;
@@ -1208,14 +1208,6 @@ body,
     z-index: 2;
   }
 }
-
-.related_news{
-  color: #1a3204;
-  @include triangle(27px, 13px);
-  @include hindBold(42px);
-  margin: 0;
-  padding: 110px 15px 42px;
-}
 .modal.fade{
   background-color: rgba(0,0,0,0.8);
   .close{
@@ -1293,13 +1285,13 @@ body,
         width: auto;
       }
     }
-    &__title{
+    &>h3{
       color: #202918;
       @include hindBold(28px);
       @include triangle(23px,8px);
       text-transform: uppercase;
     }
-    &__text{
+    &>p{
       color: #4c4c4c;
       @include lato(18px);
     }
@@ -1418,7 +1410,7 @@ body,
     &__img{
       margin-bottom: 20px;
     }
-    &__item{
+    address{
       color: #4c4c4c;
       @include lato(16px);
       margin-left: 12px;
@@ -1681,12 +1673,21 @@ body,
   margin-bottom: 90px;
   padding-bottom: 10px;
   padding-top: 20px;
-  &__wrapper{
+  ul{
     align-self: center;
     display: flex;
     justify-content: space-between;
     padding: 0;
     max-width: fit-content;
+    li {
+      border-left: 1px solid #9e9475;
+      list-style: none;
+      padding: 0 13px;
+      text-align: center;
+      &:first-child{
+        border-left: 0;
+      }
+    }
   }
   &__text,&__link{
     color: #9e9475;
@@ -2213,6 +2214,13 @@ body,
 }
 
 .related__container{
+  &>h2,&>h3{
+    color: #1a3204;
+    @include triangle(27px, 13px);
+    @include hindBold(42px);
+    margin: 0;
+    padding: 110px 15px 42px;
+  }
   .mod_noticia {
     background: url('../images/diagonal_noticias.svg') left bottom no-repeat #f0f0f0; 
     margin: 0 0 40px 0; 
