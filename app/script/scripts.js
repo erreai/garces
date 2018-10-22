@@ -43,13 +43,18 @@ $(document).ready(function() {
     language: 'es'
   })
   var slider = document.querySelectorAll('section')[0]
-  let topBar = document.getElementById('top')
+  const topBar = document.getElementById('top')
+  const topHeader = document.getElementsByClassName('top-header')[0]
+  topHeader.classList.add('static')
   $(window).scroll(function() {
-    if ($(window).scrollTop() >= (slider.clientHeight - 80)) {
-      topBar.classList.add('float')
-    } else {
-      if (topBar.classList.contains('float')) {
-        topBar.classList.remove('float')
+    if (slider.clientHeight > 115) {
+      topHeader.classList.remove('static')
+      if ($(window).scrollTop() >= (slider.clientHeight - 80)) {
+        topBar.classList.add('float')
+      } else {
+        if (topBar.classList.contains('float')) {
+          topBar.classList.remove('float')
+        }
       }
     }
   })
