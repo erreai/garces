@@ -295,4 +295,35 @@
 			width: 100%;
 		}
 	}
+	.process-app{
+		flex-direction: column;
+		.swiper-controls{
+			display: block;
+			position: relative;
+			top: 13px;
+		}
+		.swiper-slide-content{
+			img{
+				width: 100%;
+			}
+		}
+		.swiper-slide-content{
+			justify-content: flex-start;
+		}
+	}
+	.process-app .slide-control{
+		display: none;
+	}
+	.timeline .swiper-container {
+		height: 420px;
+		overflow: hidden;
+	}
+	.process-app .sidebar__left .header-container .breadcrumbs ul li{
+		font-size: 15px;
+	}
+	.timeline .swiper-button-prev{left: 2%;}
+	.timeline .swiper-button-next{right: 2%;}
+	.timeline .swiper-button-next, .timeline .swiper-button-prev{
+		position: absolute;
+	}
 }

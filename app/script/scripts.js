@@ -73,6 +73,7 @@ $(document).ready(function() {
 
 var timelineSwiper = new Swiper('.timeline .swiper-container', {
   direction: 'vertical',
+  initialSlide: 1,
   loop: false,
   speed: 1600,
   pagination: '.swiper-pagination',
@@ -85,7 +86,7 @@ var timelineSwiper = new Swiper('.timeline .swiper-container', {
   prevButton: '.swiper-button-prev',
   breakpoints: {
     768: {
-      direction: 'horizontal'
+      direction: 'vertical'
     }
   }
 })

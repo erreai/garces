@@ -133,7 +133,7 @@ a:focus, button:focus { outline: none!important}
       ul{
         li{
           display: inline-block;
-          &:nth-child(2){
+          &:nth-child(2):not(.dimmer){
             &:after, &:before{
               background: #fff;
               content: '';
@@ -368,6 +368,9 @@ a:focus, button:focus { outline: none!important}
     @include lato(13px);
     padding: 22px 0 17px; 
     text-align: center; 
+    p{
+      font-size: 13px;
+    }
   }
   .logo { width: 136px; margin: 0 auto}
   .redes { 
@@ -2016,7 +2019,7 @@ body,
     margin: 60px auto;
     padding: 0;
     position: relative;
-    width: 50%;
+    width: 60%;
     li{
       color: #4c4c4c;
       display: block;
@@ -2404,6 +2407,9 @@ body,
       }
     }
   }
+  .swiper-controls{
+    display: none;
+  }
 }
 .timeline .swiper-pagination::before {
   content: "";
@@ -2628,5 +2634,75 @@ body.loading{
   }
   100% {
     opacity: 0;
+  }
+}
+#buscador{
+  text-indent: 0;
+}
+.decoration-pack{
+  pointer-events: none;
+}
+.history .swiper-container .swiper-wrapper{
+  display: block;
+  .swiper-slide{
+    display: inline-block;
+  }
+  .slide-container {
+    align-items: center;
+    background-image: url('../images/proceso_slider_bg.jpg');
+    background-size: cover;
+    display: flex;
+    flex-grow: 3;
+  }
+  .swiper-slide-content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+  }
+}
+.ciruelas{
+  .decoration-pack{
+    position: relative;
+    top: 170px;
+    left: -40px;
+    .cherry-pack__item--1{
+      display: none;
+    }
+  }
+}
+.nectarines{
+  .decoration-pack{
+    position: relative;
+    top: -160px;
+    left: -40px;
+    .cherry-pack__item--1{
+      left: -40px;
+      top: 360px;
+    }
+    .cherry-pack__item--2{
+      top: 210px;
+      left: -140px;
+    }
+  }
+}
+.uvas{
+  .decoration-pack{
+    position: relative;
+    .cherry-pack__item{
+      &--1{
+        top: 140px;
+        left: -322px;
+      }
+      &--2{
+        top: 0px;
+        left: -40px;
+      }
+      &--3{
+        top: 200px;
+        left: 60px;
+      }
+    }
   }
 }
