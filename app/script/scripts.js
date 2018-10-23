@@ -37,7 +37,11 @@ $(document).ready(function() {
     dots: true,
     margin: 10,
     pullDrag: false,
-    dotsContainer: '.owl-dots'
+    dotsContainer: '.owl-dots',
+    autoplay: true,
+    autoplayTimeout: 7000,
+    animateOut: true
+
   })
 
   $('.datepicker').datepicker({
