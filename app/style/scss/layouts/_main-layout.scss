@@ -2678,10 +2678,11 @@ body.loading{
     &-years{
       display: flex;
       flex-direction: column;
-      padding: 220px 25px;
+      padding: 220px 0 220px 25px;
       .swiper-pagination-bullet{
         background: transparent;
         color: #9e9475;
+        cursor: pointer;
         height: fit-content;
         font-size: 16px;
         font-family: 'Cinzel', serif;
@@ -2692,7 +2693,7 @@ body.loading{
         &:after{
           content: '-';
           position: absolute; 
-          right: 20px;
+          right: 0px;
           
         }
         &-active{
@@ -2824,10 +2825,35 @@ body.loading{
     }
   }
 }
-
-/*.owl-animated-out{
-  clip-path: unset;
-  &.animated{
+@keyframes slide {
+  0%{
+    clip-path: polygon(0 0, 2720% 100%, 1640% 50%)
+  }
+  100% {
     clip-path: polygon(0 0, 100% 100%, 0% 100%);
   }
-} */
+}
+.owl-animated-out{
+  clip-path: unset;
+  &.animated{
+    animation: slide 1s;
+  }
+}
+#investigacion{
+  .inv-des__box{
+    h2{
+      color: #1a3204;
+      display: block;
+      @include itemTitle(28px, 19px, 9px);
+      line-height: 28px;
+      margin: 50px auto;
+      padding: 0;
+      text-align: center;
+    }
+  }
+}
+.carousel-home__wrapper:after{
+  bottom: 0;
+  left: calc(50% - 1px);
+  width: 2px;
+}
