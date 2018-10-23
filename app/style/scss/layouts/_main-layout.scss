@@ -2642,24 +2642,63 @@ body.loading{
 .decoration-pack{
   pointer-events: none;
 }
-.history .swiper-container .swiper-wrapper{
-  display: block;
-  .swiper-slide{
-    display: inline-block;
-  }
-  .slide-container {
-    align-items: center;
-    background-image: url('../images/proceso_slider_bg.jpg');
-    background-size: cover;
+.history .swiper{
+  &-container{
     display: flex;
-    flex-grow: 3;
   }
-  .swiper-slide-content {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: center;
+  &-wrapper{
+    flex-grow: 2;
+    margin-left: -200px;
+    max-height: 555px;
+    padding-left: 200px;
+    padding-top: 200px;
+  }
+  &-controls{
+    position: relative;
+    z-index: 3;
+    border-right: 1px solid #7d765c;
+    &:after,&:before{
+      content: '';
+      display: block;
+      height: 100px;
+      position: absolute;
+      right: -1px;
+      width: 1px;
+    }
+    &:after{
+      background-image: linear-gradient(to top, rgba(13,26,2,1) 0%,rgba(13,26,2,0) 100%) ;
+      bottom: 0;
+    }
+    &:before{
+      background-image: linear-gradient(to bottom, rgba(13,26,2,1) 0%,rgba(13,26,2,0) 100%) ;
+    }
+  }
+  &-pagination{
+    &-years{
+      display: flex;
+      flex-direction: column;
+      padding: 220px 25px;
+      .swiper-pagination-bullet{
+        background: transparent;
+        color: #9e9475;
+        height: fit-content;
+        font-size: 16px;
+        font-family: 'Cinzel', serif;
+        opacity: 1;
+        padding: 10px 3px;
+        position: relative;
+        width: 130px;
+        &:after{
+          content: '-';
+          position: absolute; 
+          right: 20px;
+          
+        }
+        &-active{
+          font-weight: 700;
+        }
+      }
+    }
   }
 }
 .ciruelas{
@@ -2678,12 +2717,12 @@ body.loading{
     top: -160px;
     left: -40px;
     .cherry-pack__item--1{
-      left: -40px;
-      top: 360px;
+      left: 0px;
+      top: 380px;
     }
     .cherry-pack__item--2{
-      top: 210px;
-      left: -140px;
+      top: 320px;
+      left: -60px;
     }
   }
 }
@@ -2692,17 +2731,57 @@ body.loading{
     position: relative;
     .cherry-pack__item{
       &--1{
-        top: 140px;
-        left: -322px;
+        top: 230px;
+        left: -42px;
       }
       &--2{
-        top: 0px;
-        left: -40px;
-      }
-      &--3{
-        top: 200px;
+        top: 110px;
         left: 60px;
       }
+      &--3{
+        top: 90px;
+        left: -237px;
+      }
     }
+  }
+}
+.history__item{
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  h2{
+    color: #484232;
+    @include cinzel(60px);
+  }
+  p{
+    color: #fff;
+    @include lato(18px);
+    max-width: 463px;
+    position: relative;
+    &:after{
+      background-color: #9e9475;
+      bottom: -20px;
+      content: '';
+      position: absolute;
+      height: 1px;
+      right: 0;
+      width: 53px;
+    }
+  }
+  .history__body{
+    margin-right: 40px;
+    text-align: right;
+  }
+}
+
+.history_bg{
+  &_1{
+    background: url('../images/historia/bg_1965.jpg') no-repeat;
+    background-size: cover;
+  }
+  &_2{
+    background: url('../images/historia/bg_1977.jpg') no-repeat;
+    background-size: cover;
   }
 }

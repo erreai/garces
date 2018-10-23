@@ -115,3 +115,14 @@ $('a[href*="#"]')
       }
     }
   })
+
+var historySwiper = new Swiper('.history .swiper-container', {
+  direction: 'vertical',
+  speed: 400,
+  pagination: '.swiper-pagination-years',
+  paginationBulletRender: function (swiper, index, className) {
+    var year = document.querySelectorAll('.swiper-slide')[index].getAttribute('data-year')
+    return '<span class="' + className + '">' + year + '</span>'
+  },
+  paginationClickable: true
+})

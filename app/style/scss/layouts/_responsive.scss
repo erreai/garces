@@ -326,4 +326,47 @@
 	.timeline .swiper-button-next, .timeline .swiper-button-prev{
 		position: absolute;
 	}
+	#prod .mod .col-md-6{
+		clear: both;
+	}
+	.history .swiper-container{
+		flex-direction: column;
+	}
+	.history .swiper-pagination-years{
+		flex-direction: row;
+		flex-wrap: wrap;
+		padding: 120px 40px 30px;
+	}
+	.history .swiper-pagination-years .swiper-pagination-bullet{
+		width: 25%;
+		&:last-child{
+			&:after{
+				display: none;
+			}
+		}
+	}
+	.history .swiper-wrapper{
+		padding: 0 20px 20px;
+		margin-left: 0;
+		max-height: 300px;
+	}
+	.history__item{
+		flex-direction: column;
+	}
+	.history__item h2{
+		font-size: 40px;
+	}
+	.history__item p{
+		font-size: 15px;
+	}
+	.history__item img{
+		max-width: 300px;
+  	align-self: flex-start;
+	}
+	.history .swiper-controls{
+		border-right: 0;
+		&:after,&:before{
+			display: none;
+		}
+	}
 }
