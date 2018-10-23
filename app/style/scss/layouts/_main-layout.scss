@@ -2825,20 +2825,6 @@ body.loading{
     }
   }
 }
-@keyframes slide {
-  0%{
-    clip-path: polygon(0 0, 2720% 100%, 1640% 50%)
-  }
-  100% {
-    clip-path: polygon(0 0, 100% 100%, 0% 100%);
-  }
-}
-.owl-animated-out{
-  clip-path: unset;
-  &.animated{
-    animation: slide 1s;
-  }
-}
 #investigacion{
   .inv-des__box{
     h2{

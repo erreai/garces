@@ -3,7 +3,8 @@
 @import "base/grid-system";
 @import "base/web-font";
 @import "plugins/plugins";
-@import "../swiper.min.css";
+@import "plugins/animate";
+@import "plugins/swiper";
 @import "mixin/mixin";
 @import "components/components";
 @import 'form/form';
