@@ -83,12 +83,28 @@ $(document).ready(function() {
   })
   AOS.init()
 
-  $('#from_datos').submit(function(e) {
+  $('#form_ficha').submit(function(e) {
     e.preventDefault()
     $(this).parent().fadeOut()
-    $('#ficha').fadeIn()
-    $('#step_datos').removeClass('active')
-    $('#step_ficha').addClass('active')
+    $('#datos').fadeIn()
+    $('#step_ficha').removeClass('active')
+    $('#step_datos').addClass('active')
+  })
+  $('.back-to-top').hover(
+    () => {
+      $('.back-to-top span').addClass('animated infinite bounce ')
+    },
+    () => {
+      $('.back-to-top span').removeClass('animated infinite bounce ')
+    }
+  )
+  $(window).scroll(function() {
+    var scroll = $(window).scrollTop()
+    if (scroll >= 500) {
+      $('.back-to-top').addClass('visible')
+    } else {
+      $('.back-to-top').removeClass('visible')
+    }
   })
 })
 
@@ -139,6 +155,9 @@ $('a[href*="#"]')
 
 var historySwiper = new Swiper('.history .swiper-container', {
   direction: 'vertical',
+  autoplay: {
+    delay: 5000
+  },
   speed: 400,
   pagination: '.swiper-pagination-years',
   paginationBulletRender: function (swiper, index, className) {

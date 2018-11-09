@@ -1369,6 +1369,7 @@ body,
       margin-left: 30px;
       margin-top: 10px;
       padding-bottom: 10px;
+      text-transform: lowercase;
       &:hover{
         background-color: rgba(0, 0, 0, 0.3);
       }
@@ -1930,7 +1931,7 @@ body,
   position: relative;
   overflow: hidden;
   &:after{
-    content: '';
+    // content: '';
     background: url('../images/glass_plus.png') no-repeat;
     bottom: 13px;
     height: 30px;
@@ -2754,7 +2755,7 @@ body.loading{
   justify-content: flex-end;
   h2{
     color: #484232;
-    @include cinzel(60px);
+    @include hind(60px);
   }
   p{
     color: #fff;
@@ -2842,4 +2843,50 @@ body.loading{
   bottom: 0;
   left: calc(50% - 1px);
   width: 2px;
+}
+
+.back-to-top{
+  bottom: 20px;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  right: 20px;
+  transition: all .2s ease-in;
+  z-index: 10;
+  &.visible{
+    opacity: 1;
+    pointer-events: all;
+  }
+  a{
+    .btn-top{
+      background-color: #000;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      color: #fff;
+      display: block;
+      padding: 20px;
+      position: relative;
+      &:before, &:after{
+        content: "\e260";
+        display: inline-block;
+        font-family: 'Glyphicons Halflings';
+        font-style: normal;
+        font-weight: 400;
+        left: 12px;
+        line-height: 1;
+        position: absolute;
+        top: 11px;
+      }
+      &:after{
+        transform: translateY(5px);
+      }
+    }
+  }
+}
+#campos + .cta{
+  margin-top: 200px;
+}
+article{
+  &:focus, &:active{
+    outline: none;
+  }
 }

@@ -25,14 +25,14 @@
     </aside>
     <main id="main">
       <aside class='float-menu'>
-        <div id="menu">
+        <div id="menu" role="tablist">
             <div class="sub-menu">
               <button class='close-menu'>
                 <i></i>
                 <i></i>
               </button>
-              <ul class="sub-menu separate-top-250">
-                <li class='has-child collapsed' data-target="#subMenu-1" data-toggle="collapse">
+              <ul class="sub-menu separate-top-250 panel-group">
+                <li class='has-child collapsed' data-target="#subMenu-1" data-parent="#menu" data-toggle="collapse" aria-expanded="false">
                   <a href="#" >PRODUCTOS</a>
                   <ul class="nested-menu collapse" id="subMenu-1">
                     <li><a href="#">Sub Item</a></li>
@@ -40,7 +40,14 @@
                     <li><a href="#">Sub Item</a></li>
                   </ul>
                 </li>
-                <li><a href="#">NOSOTROS</a></li>
+                <li class='has-child collapsed' data-target="#subMenu-2" data-parent="#menu" data-toggle="collapse" aria-expanded="false">
+                  <a href="#">NOSOTROS</a>
+                  <ul class="nested-menu collapse" id="subMenu-2">
+                    <li><a href="#">Sub Item</a></li>
+                    <li><a href="#">Sub Item</a></li>
+                    <li><a href="#">Sub Item</a></li>
+                  </ul>
+                </li>
                 <li><a href="#">SAN FRANCISCO AG</a></li>
                 <li><a href="#">¿DONDE ESTAMOS?</a></li>
                 <li><a href="#">NUESTROS CLIENTES</a></li>
@@ -395,6 +402,7 @@
           <div class="legal"> Términos y condiciones  Agrícola Garcés todos los derechos reservados<br>
             Fundo Santa Margarita s/n, San Francisco de Mostazal, Chile - Teléfono 722 744 400 </div>
         </section>
+        <div class="back-to-top"><a href="#main"><span class="btn-top"></span></a></div>
     </main>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
