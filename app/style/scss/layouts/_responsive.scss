@@ -251,7 +251,7 @@
 		}
 	}
 	.presentation__image{
-		position: absolute;
+		position: relative;
 		width: 100%;;
 	}
 	.presentation__box{
@@ -259,7 +259,7 @@
 		left: 0px !important;
 		width: 90%;
 		margin: auto;
-		top: 20px;
+		top: -20px;
 		&>h2{
 			padding-top: 20px;
 		}
