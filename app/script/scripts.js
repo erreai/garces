@@ -110,6 +110,9 @@ $(document).ready(function() {
 
 var timelineSwiper = new Swiper('.timeline .swiper-container', {
   direction: 'vertical',
+  autoplay: {
+    delay: 5000
+  },
   initialSlide: 1,
   loop: false,
   speed: 1600,
