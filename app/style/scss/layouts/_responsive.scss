@@ -12,7 +12,7 @@
 @media (max-width:767px){
 	
 	.top .logo {width: 100px;}
-	#prod .mod { display: block;}
+	#prod .mod { display: flex; flex-direction: column}
 	#footer .logo { width: 100px;}
 	#mods_certi .mod_certi .img { float: none; width: 100%; padding:20px!important; text-align: center!important}
 	#mods_certi .mod_certi .img img { margin: 0 auto}
@@ -115,9 +115,13 @@
 				right: unset;
 				left: 20px;
 			}
+			.certificate__title{
+				margin-left: auto;
+			}
 		}
 		&__title{
 			min-height: 60px;
+			max-width: 66%;
 		}
 	}
 	.section .cherry-pack{
@@ -132,7 +136,7 @@
 		font-size: 16px;
 	}
 	#plum-pack{
-		top: 140px;
+		top: -70px;
 		position: relative;
 		left: -40px;
 		display: block;
@@ -183,15 +187,17 @@
 		padding: 30px;
 		position: absolute;
 		width: 100%;
-	}
+  }
 	.intern-nav__wrapper{
-		flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: center;
 		.intern-nav__item{
-			margin-top: 5px;
-			width: 33.3%;
-			&:nth-child(4){
-				border-left: 0;
-			}
+      margin-bottom: 15px;
+      margin-top: 5px;
+			width: 50%;
+			&:nth-child(odd){
+        border-left: 0;
+      }
 		}
 	}
 	.formulario .oficinas__img{
@@ -388,5 +394,54 @@
 		&-prev, &-next{
 			visibility: hidden;
 		}
-	}
+  }
+  #campos{
+    padding-bottom: 50px;
+    .recuadro{
+      .cta__button{
+        margin: 20px 0;
+      }
+    }
+  }
+	#campos+.cta{
+		margin-top: 100px;
+  }
+  .trabaja .cuadro{
+    width: 100%;
+    left: 0;
+  }
+  .mod_planta h2{
+    background-position: center center;
+  }
+  .temporada ul li{
+    width: 15%;
+  }
+  
+  .presentation-card--reverse{
+    flex-direction: column;
+  }
+  .ciruelas, .nectarines, .uvas{
+    &>div:first-child{
+      order: 2;
+      &+div{
+        order: 1
+      }
+    }
+  }
+  .ciruelas .decoration-pack{
+    top: -70px;
+  }
+  .nectarines .decoration-pack{
+    top: -340px;
+  }
+  .uvas .decoration-pack{
+    top: -170px;
+  }
+  .carousel-home__wrapper:after{
+    bottom: -70px;
+  }
+  img.size-full{
+	width: 100%;
+	height: auto;
+  }
 }

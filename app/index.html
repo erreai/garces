@@ -31,18 +31,18 @@
                 <i></i>
                 <i></i>
               </button>
-              <ul class="sub-menu separate-top-250 panel-group">
-                <li class='has-child collapsed' data-target="#subMenu-1" data-parent="#menu" data-toggle="collapse" aria-expanded="false">
+              <ul id="menu_1" class="sub-menu separate-top-250 panel-group">
+                <li class='panel panel-default has-child collapsed' id="submenu_item_1" data-target="#subMenu-1" aria-controls="subMenu-1" data-parent="#menu_1" data-toggle="collapse" aria-expanded="false">
                   <a href="#" >PRODUCTOS</a>
-                  <ul class="nested-menu collapse" id="subMenu-1">
+                  <ul class="nested-menu collapse" id="subMenu-1" aria-labelledby="submenu_item_1" data-parent="#menu_1">
                     <li><a href="#">Sub Item</a></li>
                     <li><a href="#">Sub Item</a></li>
                     <li><a href="#">Sub Item</a></li>
                   </ul>
                 </li>
-                <li class='has-child collapsed' data-target="#subMenu-2" data-parent="#menu" data-toggle="collapse" aria-expanded="false">
+                <li class='panel panel-default has-child collapsed' id="submenu_item_2" data-target="#subMenu-2" aria-controls="subMenu-2" data-parent="#menu_1" data-toggle="collapse" aria-expanded="false">
                   <a href="#">NOSOTROS</a>
-                  <ul class="nested-menu collapse" id="subMenu-2">
+                  <ul class="nested-menu collapse" id="subMenu-2" aria-labelledby="submenu_item_2" data-parent="#menu_2">
                     <li><a href="#">Sub Item</a></li>
                     <li><a href="#">Sub Item</a></li>
                     <li><a href="#">Sub Item</a></li>
@@ -61,7 +61,6 @@
                   </div>
                 </li>
               </ul>
-            </div>
           </div>
       </aside>
       <section class="section">

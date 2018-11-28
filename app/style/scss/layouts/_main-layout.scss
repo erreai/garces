@@ -631,7 +631,7 @@ a.ir_portal {color: #ffffff; border: solid 1px #ffffff;@include hindBold(20px); 
 }
 #productores_mod .container { position: relative; padding: 40px 15px 80px}
 #productores_mod a.acceso { 
-  background: url('../images/bg_link_prov.png') left top no-repeat; 
+  background: #e53328; 
   border: 1px solid #fff;
   color: #fff;
   height: 75px; 
@@ -1154,6 +1154,7 @@ body,
 .image{
   &__link{
     &--main{
+      pointer-events: none;
       &:after{
         opacity: 0;
         transition: all .3s ease-out;
@@ -2889,5 +2890,64 @@ body.loading{
 article{
   &:focus, &:active{
     outline: none;
+  }
+}
+
+.panel.has-child{
+    margin-bottom: 0px;
+    background-color: inherit;
+    border: inherit;
+    border-radius: 0;
+    box-shadow: 0
+}
+
+.section_404{
+  align-content: center;
+  background-image: url('../images/bg_404.jpg');
+  background-size: cover;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+  justify-content: center;
+  text-align: center;
+  &__title{
+    font-size: 36px;
+    font-weight: 600;
+    margin: 0 0 10px;
+    text-transform: uppercase;
+  }
+  &__text{
+    margin: 0;
+    a{
+      color: #fff;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+  }
+}
+
+.search-results{
+  .intro_text{
+    font-size: 22px;
+  }
+  &__list{
+    padding: 0;
+    .search-result{
+      display: block;
+      margin-top: 25px;
+      a{
+        color: #333;
+        font-size: 22px;
+      }
+      &__title{
+        @include itemTitle(23px, 23px, 10px);
+        font-weight: 600;
+        text-transform: capitalize;
+      }
+      &__link{
+        display: block;
+      }
+    }
   }
 }
